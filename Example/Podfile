@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZHRichText_Example' do
+  pod 'ZHRichText', :path => '../'
+
+  target 'ZHRichText_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
