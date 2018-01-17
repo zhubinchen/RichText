@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "ZHRichText.h"
 
 FOUNDATION_EXPORT double ZHRichTextVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZHRichTextVersionString[];

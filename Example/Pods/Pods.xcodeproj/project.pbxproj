@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074E2106200E022F00DB4356 /* ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20F7200DFD3D00DB4356 /* ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E2107200E022F00DB4356 /* ZHStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20FC200DFE9100DB4356 /* ZHStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2109200E026400DB4356 /* ZHRichTextConvertible.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E210D200E026400DB4356 /* NSString+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E210A200E026400DB4356 /* NSString+ZHRichText.m */; };
+		074E210E200E026400DB4356 /* NSString+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E210B200E026400DB4356 /* NSString+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E2113200E040100DB4356 /* ZHPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E210F200E039A00DB4356 /* ZHPrivate.h */; };
+		074E2114200E072400DB4356 /* ZHRichText-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B9D9A842E8B13657875FC9B2ED24A37E /* ZHRichText-prefix.pch */; };
+		074E2115200E074100DB4356 /* ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E20F8200DFD3D00DB4356 /* ZHRichText.m */; };
+		074E2116200E074800DB4356 /* ZHStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E20FD200DFE9100DB4356 /* ZHStyle.m */; };
+		074E211F200E075000DB4356 /* ZHPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E2110200E039A00DB4356 /* ZHPrivate.m */; };
+		074E212E200EF28100DB4356 /* UILabel+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E212A200EF28100DB4356 /* UILabel+ZHRichText.m */; };
+		074E212F200EF28100DB4356 /* NSAttributedString+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E212B200EF28100DB4356 /* NSAttributedString+ZHRichText.m */; };
+		074E2130200EF29A00DB4356 /* NSAttributedString+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2129200EF28100DB4356 /* NSAttributedString+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E2131200EF29A00DB4356 /* UILabel+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2128200EF28100DB4356 /* UILabel+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D5E8203EFD431D3A4E0F774A0425F2F /* Pods-ZHRichText_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F36991C02D26973F0F7D8C94051CE84 /* Pods-ZHRichText_Tests-dummy.m */; };
 		2A5D3FC729C1C7886F504CDF9ACF9EAD /* Pods-ZHRichText_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D55273BF9FDC2ED8C01C7F12C1BB4652 /* Pods-ZHRichText_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51783502D67E0AC5C0BCE238B238A438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		7C35B254C8430C508ED560D71ACFDAD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		9EA0173ECD0E4AD92D0FDCDF624D70D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		A255AF18FA87881425F2A8849A37FFF2 /* ZHRichText-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E88FA830D3E811C45D952713627C6A /* ZHRichText-dummy.m */; };
-		B50D2F52A060BAE7E0F6D30C4725C6D9 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE25D33C79E2F139C31306263DE /* ReplaceMe.m */; };
 		D6BE4A375302F48ADB20F82D4720E910 /* Pods-ZHRichText_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9060274C99FB938B98F2801D243A720 /* Pods-ZHRichText_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB02FE030444406E1FFC4F3DE4B8A6F2 /* Pods-ZHRichText_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF89E8A0E07B0E4538E84BA89577FE /* Pods-ZHRichText_Example-dummy.m */; };
 		DEAABD1783E024A636175DD7C8310B7E /* ZHRichText-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05432B49CB4D79CAE2538B99582AC5BC /* ZHRichText-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,15 +45,28 @@
 /* Begin PBXFileReference section */
 		0219BE9D001BE322F46AA60D57ECE6BA /* Pods-ZHRichText_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRichText_Example-resources.sh"; sourceTree = "<group>"; };
 		05432B49CB4D79CAE2538B99582AC5BC /* ZHRichText-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRichText-umbrella.h"; sourceTree = "<group>"; };
-		07957E6CCEF24A0530179D5A46DFE469 /* Pods_ZHRichText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHRichText_Tests.framework; path = "Pods-ZHRichText_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EC4697E132C11C29AAE049C52AEEA6A /* ZHRichText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZHRichText.framework; path = ZHRichText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		074E20F7200DFD3D00DB4356 /* ZHRichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHRichText.h; path = ZHRichText/Classes/ZHRichText.h; sourceTree = "<group>"; };
+		074E20F8200DFD3D00DB4356 /* ZHRichText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHRichText.m; path = ZHRichText/Classes/ZHRichText.m; sourceTree = "<group>"; };
+		074E20FC200DFE9100DB4356 /* ZHStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHStyle.h; path = ZHRichText/Classes/ZHStyle.h; sourceTree = "<group>"; };
+		074E20FD200DFE9100DB4356 /* ZHStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHStyle.m; path = ZHRichText/Classes/ZHStyle.m; sourceTree = "<group>"; };
+		074E2109200E026400DB4356 /* ZHRichTextConvertible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHRichTextConvertible.h; path = ZHRichText/Classes/ZHRichTextConvertible.h; sourceTree = "<group>"; };
+		074E210A200E026400DB4356 /* NSString+ZHRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ZHRichText.m"; path = "ZHRichText/Classes/NSString+ZHRichText.m"; sourceTree = "<group>"; };
+		074E210B200E026400DB4356 /* NSString+ZHRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ZHRichText.h"; path = "ZHRichText/Classes/NSString+ZHRichText.h"; sourceTree = "<group>"; };
+		074E210F200E039A00DB4356 /* ZHPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHPrivate.h; path = ZHRichText/Classes/ZHPrivate.h; sourceTree = "<group>"; };
+		074E2110200E039A00DB4356 /* ZHPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHPrivate.m; path = ZHRichText/Classes/ZHPrivate.m; sourceTree = "<group>"; };
+		074E2128200EF28100DB4356 /* UILabel+ZHRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+ZHRichText.h"; path = "ZHRichText/Classes/UILabel+ZHRichText.h"; sourceTree = "<group>"; };
+		074E2129200EF28100DB4356 /* NSAttributedString+ZHRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+ZHRichText.h"; path = "ZHRichText/Classes/NSAttributedString+ZHRichText.h"; sourceTree = "<group>"; };
+		074E212A200EF28100DB4356 /* UILabel+ZHRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+ZHRichText.m"; path = "ZHRichText/Classes/UILabel+ZHRichText.m"; sourceTree = "<group>"; };
+		074E212B200EF28100DB4356 /* NSAttributedString+ZHRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+ZHRichText.m"; path = "ZHRichText/Classes/NSAttributedString+ZHRichText.m"; sourceTree = "<group>"; };
+		07957E6CCEF24A0530179D5A46DFE469 /* Pods_ZHRichText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHRichText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EC4697E132C11C29AAE049C52AEEA6A /* ZHRichText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHRichText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8EF74B75DFF1CCDAE7B7C34C34C9F1 /* Pods-ZHRichText_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRichText_Tests-resources.sh"; sourceTree = "<group>"; };
-		21643C2A298F2DC7BE6E6528AD85F7C8 /* ZHRichText.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ZHRichText.modulemap; sourceTree = "<group>"; };
+		21643C2A298F2DC7BE6E6528AD85F7C8 /* ZHRichText.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ZHRichText.modulemap; sourceTree = "<group>"; };
 		27BA1762AA314BE41C97C26A5ECDA3AB /* Pods-ZHRichText_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRichText_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		35E88FA830D3E811C45D952713627C6A /* ZHRichText-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZHRichText-dummy.m"; sourceTree = "<group>"; };
 		3F8ECFE9309A3CF7F5381A1847086FE9 /* Pods-ZHRichText_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRichText_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4AA06B83B16AD15ED45FCBE62C593800 /* Pods-ZHRichText_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRichText_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4D0D69D3929EBA28B6CB94ED4A165899 /* Pods_ZHRichText_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHRichText_Example.framework; path = "Pods-ZHRichText_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0D69D3929EBA28B6CB94ED4A165899 /* Pods_ZHRichText_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHRichText_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BF89E8A0E07B0E4538E84BA89577FE /* Pods-ZHRichText_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHRichText_Example-dummy.m"; sourceTree = "<group>"; };
 		5CD24DADD7CD8771235A7C332F73D697 /* Pods-ZHRichText_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRichText_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5F2FEDE15DDC3E927289D45747D84E5B /* Pods-ZHRichText_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHRichText_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -48,11 +74,11 @@
 		67FB1EF5A0B8B5C43765779A5E512609 /* Pods-ZHRichText_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZHRichText_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6EFF2C1222268141E156887D2256874A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F36991C02D26973F0F7D8C94051CE84 /* Pods-ZHRichText_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHRichText_Tests-dummy.m"; sourceTree = "<group>"; };
-		7440C3C8206AC38B66793CBDF04C0F7A /* Pods-ZHRichText_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZHRichText_Example.modulemap"; sourceTree = "<group>"; };
+		7440C3C8206AC38B66793CBDF04C0F7A /* Pods-ZHRichText_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZHRichText_Example.modulemap"; sourceTree = "<group>"; };
 		76962CB68BF22F4D92CE1D17BB71CD8D /* ZHRichText.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZHRichText.xcconfig; sourceTree = "<group>"; };
 		83386F9203BF3AF96C8C70074588B225 /* Pods-ZHRichText_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHRichText_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		88BE77A73DEE5CAA9823D747652BA3A8 /* Pods-ZHRichText_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZHRichText_Tests.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		88BE77A73DEE5CAA9823D747652BA3A8 /* Pods-ZHRichText_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZHRichText_Tests.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ADE9EED5DC6D89135B424636B8FB9470 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9D9A842E8B13657875FC9B2ED24A37E /* ZHRichText-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRichText-prefix.pch"; sourceTree = "<group>"; };
 		D55273BF9FDC2ED8C01C7F12C1BB4652 /* Pods-ZHRichText_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHRichText_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -60,7 +86,6 @@
 		E47D870AAD00FD880B113B8033F41055 /* Pods-ZHRichText_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRichText_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		EC909F238A9CC40C179C0B96DB8C4972 /* Pods-ZHRichText_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRichText_Example-frameworks.sh"; sourceTree = "<group>"; };
 		F9060274C99FB938B98F2801D243A720 /* Pods-ZHRichText_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHRichText_Example-umbrella.h"; sourceTree = "<group>"; };
-		F93B1FE25D33C79E2F139C31306263DE /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = ZHRichText/Classes/ReplaceMe.m; sourceTree = "<group>"; };
 		FA46A1223881C2FC4B209D58D5FE082D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,7 +224,19 @@
 		F8BF7286976D8375B9979768B9B2F9B2 /* ZHRichText */ = {
 			isa = PBXGroup;
 			children = (
-				F93B1FE25D33C79E2F139C31306263DE /* ReplaceMe.m */,
+				074E2109200E026400DB4356 /* ZHRichTextConvertible.h */,
+				074E20F7200DFD3D00DB4356 /* ZHRichText.h */,
+				074E20F8200DFD3D00DB4356 /* ZHRichText.m */,
+				074E20FC200DFE9100DB4356 /* ZHStyle.h */,
+				074E20FD200DFE9100DB4356 /* ZHStyle.m */,
+				074E210B200E026400DB4356 /* NSString+ZHRichText.h */,
+				074E210A200E026400DB4356 /* NSString+ZHRichText.m */,
+				074E2129200EF28100DB4356 /* NSAttributedString+ZHRichText.h */,
+				074E212B200EF28100DB4356 /* NSAttributedString+ZHRichText.m */,
+				074E2128200EF28100DB4356 /* UILabel+ZHRichText.h */,
+				074E212A200EF28100DB4356 /* UILabel+ZHRichText.m */,
+				074E210F200E039A00DB4356 /* ZHPrivate.h */,
+				074E2110200E039A00DB4356 /* ZHPrivate.m */,
 				1F081D2E2D6E81D4EDEAF54DBDB288E7 /* Support Files */,
 			);
 			name = ZHRichText;
@@ -229,7 +266,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074E2113200E040100DB4356 /* ZHPrivate.h in Headers */,
+				074E2131200EF29A00DB4356 /* UILabel+ZHRichText.h in Headers */,
+				074E2106200E022F00DB4356 /* ZHRichText.h in Headers */,
+				074E210E200E026400DB4356 /* NSString+ZHRichText.h in Headers */,
 				DEAABD1783E024A636175DD7C8310B7E /* ZHRichText-umbrella.h in Headers */,
+				074E2107200E022F00DB4356 /* ZHStyle.h in Headers */,
+				074E2130200EF29A00DB4356 /* NSAttributedString+ZHRichText.h in Headers */,
+				074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */,
+				074E2114200E072400DB4356 /* ZHRichText-prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +340,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -321,8 +366,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50D2F52A060BAE7E0F6D30C4725C6D9 /* ReplaceMe.m in Sources */,
+				074E210D200E026400DB4356 /* NSString+ZHRichText.m in Sources */,
+				074E211F200E075000DB4356 /* ZHPrivate.m in Sources */,
+				074E2115200E074100DB4356 /* ZHRichText.m in Sources */,
 				A255AF18FA87881425F2A8849A37FFF2 /* ZHRichText-dummy.m in Sources */,
+				074E2116200E074800DB4356 /* ZHStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +379,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB02FE030444406E1FFC4F3DE4B8A6F2 /* Pods-ZHRichText_Example-dummy.m in Sources */,
+				074E212F200EF28100DB4356 /* NSAttributedString+ZHRichText.m in Sources */,
+				074E212E200EF28100DB4356 /* UILabel+ZHRichText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +450,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -408,14 +460,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -582,7 +640,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -590,15 +650,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
