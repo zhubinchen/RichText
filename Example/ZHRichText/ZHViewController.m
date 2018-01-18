@@ -7,8 +7,11 @@
 //
 
 #import "ZHViewController.h"
+#import <ZHRichText/ZHRichText.h>
 
 @interface ZHViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end
 
@@ -17,7 +20,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.testLabel.richText = @"String";
+    self.testLabel.richText = @"RichText".rt
+                        .color([UIColor darkGrayColor])
+                        .font(UIFont.regular(12))
+                        .range(0,4)
+                        .color([UIColor redColor])
+                        .font(UIFont.bold(12))
+                        .underline([UIColor redColor])
+                        .matches(@"R")
+                        .font(UIFont.bold(30));
 }
 
 - (void)didReceiveMemoryWarning
