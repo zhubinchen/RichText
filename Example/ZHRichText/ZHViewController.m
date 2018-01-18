@@ -21,16 +21,17 @@
 {
     [super viewDidLoad];
     
-    self.testLabel.richText = @"String";
-    self.testLabel.richText = @"RichText".rt
-                        .color([UIColor darkGrayColor])
-                        .font(UIFont.regular(12))
-                        .range(0,4)
-                        .color([UIColor redColor])
-                        .font(UIFont.bold(12))
-                        .underline([UIColor redColor])
-                        .matches(@"R")
-                        .font(UIFont.bold(30));
+    // Style把多个属性放一起，方便复用
+    ZHRichTextStyle *style = [ZHRichTextStyle create:^(ZHRichTextStyle *style) {
+        style.font = UIFont.bold(16);
+        style.color = [UIColor darkGrayColor];
+        style.underline = [UIColor redColor];
+    }];
+    
+    self.testLabel.richText = @"String"; // 兼容NSString
+    self.testLabel.richText = @"RichText".whole.style(style) // 整体设置style
+                        .range(0,4).color([UIColor redColor]) // 0~4设为红色
+                        .matches(@"R").font(UIFont.bold(30)); // 给“R”设置字体
 }
 
 - (void)didReceiveMemoryWarning

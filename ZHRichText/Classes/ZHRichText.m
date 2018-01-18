@@ -57,8 +57,8 @@
     return self;
 }
 
-- (ZHRichText *(^)(ZHStyle *))style {
-    return ^(ZHStyle *style) {
+- (ZHRichText *(^)(ZHRichTextStyle *))style {
+    return ^(ZHRichTextStyle *style) {
         return [self addAttributes:style.attributes];
     };
 }

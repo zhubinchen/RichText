@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		074E2106200E022F00DB4356 /* ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20F7200DFD3D00DB4356 /* ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		074E2107200E022F00DB4356 /* ZHStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20FC200DFE9100DB4356 /* ZHStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E2107200E022F00DB4356 /* ZHRichTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2109200E026400DB4356 /* ZHRichTextConvertible.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E210D200E026400DB4356 /* NSString+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E210A200E026400DB4356 /* NSString+ZHRichText.m */; };
 		074E210E200E026400DB4356 /* NSString+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E210B200E026400DB4356 /* NSString+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E2113200E040100DB4356 /* ZHPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E210F200E039A00DB4356 /* ZHPrivate.h */; };
 		074E2114200E072400DB4356 /* ZHRichText-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B9D9A842E8B13657875FC9B2ED24A37E /* ZHRichText-prefix.pch */; };
 		074E2115200E074100DB4356 /* ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E20F8200DFD3D00DB4356 /* ZHRichText.m */; };
-		074E2116200E074800DB4356 /* ZHStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E20FD200DFE9100DB4356 /* ZHStyle.m */; };
+		074E2116200E074800DB4356 /* ZHRichTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E20FD200DFE9100DB4356 /* ZHRichTextStyle.m */; };
 		074E211F200E075000DB4356 /* ZHPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E2110200E039A00DB4356 /* ZHPrivate.m */; };
 		074E2130200EF29A00DB4356 /* NSAttributedString+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2129200EF28100DB4356 /* NSAttributedString+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E2131200EF29A00DB4356 /* UILabel+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2128200EF28100DB4356 /* UILabel+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,8 +49,8 @@
 		05432B49CB4D79CAE2538B99582AC5BC /* ZHRichText-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRichText-umbrella.h"; sourceTree = "<group>"; };
 		074E20F7200DFD3D00DB4356 /* ZHRichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHRichText.h; path = ZHRichText/Classes/ZHRichText.h; sourceTree = "<group>"; };
 		074E20F8200DFD3D00DB4356 /* ZHRichText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHRichText.m; path = ZHRichText/Classes/ZHRichText.m; sourceTree = "<group>"; };
-		074E20FC200DFE9100DB4356 /* ZHStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHStyle.h; path = ZHRichText/Classes/ZHStyle.h; sourceTree = "<group>"; };
-		074E20FD200DFE9100DB4356 /* ZHStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHStyle.m; path = ZHRichText/Classes/ZHStyle.m; sourceTree = "<group>"; };
+		074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHRichTextStyle.h; path = ZHRichText/Classes/ZHRichTextStyle.h; sourceTree = "<group>"; };
+		074E20FD200DFE9100DB4356 /* ZHRichTextStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHRichTextStyle.m; path = ZHRichText/Classes/ZHRichTextStyle.m; sourceTree = "<group>"; };
 		074E2109200E026400DB4356 /* ZHRichTextConvertible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHRichTextConvertible.h; path = ZHRichText/Classes/ZHRichTextConvertible.h; sourceTree = "<group>"; };
 		074E210A200E026400DB4356 /* NSString+ZHRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ZHRichText.m"; path = "ZHRichText/Classes/NSString+ZHRichText.m"; sourceTree = "<group>"; };
 		074E210B200E026400DB4356 /* NSString+ZHRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ZHRichText.h"; path = "ZHRichText/Classes/NSString+ZHRichText.h"; sourceTree = "<group>"; };
@@ -231,8 +231,8 @@
 				074E2109200E026400DB4356 /* ZHRichTextConvertible.h */,
 				074E20F7200DFD3D00DB4356 /* ZHRichText.h */,
 				074E20F8200DFD3D00DB4356 /* ZHRichText.m */,
-				074E20FC200DFE9100DB4356 /* ZHStyle.h */,
-				074E20FD200DFE9100DB4356 /* ZHStyle.m */,
+				074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */,
+				074E20FD200DFE9100DB4356 /* ZHRichTextStyle.m */,
 				074E219F20108BB500DB4356 /* UIFont+ZHRichText.h */,
 				074E21A020108BB500DB4356 /* UIFont+ZHRichText.m */,
 				074E210B200E026400DB4356 /* NSString+ZHRichText.h */,
@@ -277,7 +277,7 @@
 				074E2106200E022F00DB4356 /* ZHRichText.h in Headers */,
 				074E210E200E026400DB4356 /* NSString+ZHRichText.h in Headers */,
 				DEAABD1783E024A636175DD7C8310B7E /* ZHRichText-umbrella.h in Headers */,
-				074E2107200E022F00DB4356 /* ZHStyle.h in Headers */,
+				074E2107200E022F00DB4356 /* ZHRichTextStyle.h in Headers */,
 				074E21A320108D0F00DB4356 /* UIFont+ZHRichText.h in Headers */,
 				074E2130200EF29A00DB4356 /* NSAttributedString+ZHRichText.h in Headers */,
 				074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */,
@@ -379,7 +379,7 @@
 				074E21A420108D1500DB4356 /* UIFont+ZHRichText.m in Sources */,
 				074E2115200E074100DB4356 /* ZHRichText.m in Sources */,
 				A255AF18FA87881425F2A8849A37FFF2 /* ZHRichText-dummy.m in Sources */,
-				074E2116200E074800DB4356 /* ZHStyle.m in Sources */,
+				074E2116200E074800DB4356 /* ZHRichTextStyle.m in Sources */,
 				074E2132200EF49300DB4356 /* UILabel+ZHRichText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

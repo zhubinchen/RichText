@@ -1,21 +1,22 @@
 //
-//  ZHStyle.m
+//  ZHRichTextStyle.m
 //  Pods-ZHRichText_Example
 //
 //  Created by zhubch on 2018/1/16.
 //
 
-#import "ZHStyle.h"
+#import "ZHRichTextStyle.h"
 
-@implementation ZHStyle
+@implementation ZHRichTextStyle
 
-+ (instancetype)create:(void (^)(ZHStyle *))maker {
-    ZHStyle *style = [[self alloc] init];
-    maker([[self alloc] init]);
++ (instancetype)create:(void (^)(ZHRichTextStyle *))maker {
+    ZHRichTextStyle *style = [[self alloc] init];
+    maker(style);
     return style;
 }
 
 - (NSDictionary *)attributes {
+    
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     if (_font) {
         [attrs setObject:_font forKey:NSFontAttributeName];

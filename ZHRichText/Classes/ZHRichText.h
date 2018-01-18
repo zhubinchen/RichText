@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHStyle.h"
+#import "ZHRichTextStyle.h"
 #import "ZHRichTextConvertible.h"
 #import "UILabel+ZHRichText.h"
 #import "NSString+ZHRichText.h"
@@ -21,7 +21,7 @@
 @property(readonly) ZHRichText* whole; // 全部范围
 
 // 用style对象设置属性
-@property(readonly) ZHRichText*(^style)(ZHStyle*);
+@property(readonly) ZHRichText*(^style)(ZHRichTextStyle*);
 
 // 设置单个属性
 @property(readonly) ZHRichText*(^color)(UIColor*);
