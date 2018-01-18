@@ -12,6 +12,7 @@
 #import "NSString+ZHRichText.h"
 #import "NSAttributedString+ZHRichText.h"
 #import "UIFont+ZHRichText.h"
+#import "ZHRichTextImage.h"
 
 @interface ZHRichText: NSObject<ZHRichTextConvertible>
 

@@ -23,6 +23,8 @@
 		074E2133200EF49800DB4356 /* NSAttributedString+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E212B200EF28100DB4356 /* NSAttributedString+ZHRichText.m */; };
 		074E21A320108D0F00DB4356 /* UIFont+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E219F20108BB500DB4356 /* UIFont+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E21A420108D1500DB4356 /* UIFont+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E21A020108BB500DB4356 /* UIFont+ZHRichText.m */; };
+		074E21A920109CF900DB4356 /* ZHRichTextImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E21A520109CE000DB4356 /* ZHRichTextImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		074E21AA20109CF900DB4356 /* ZHRichTextImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E21A620109CE000DB4356 /* ZHRichTextImage.m */; };
 		1D5E8203EFD431D3A4E0F774A0425F2F /* Pods-ZHRichText_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F36991C02D26973F0F7D8C94051CE84 /* Pods-ZHRichText_Tests-dummy.m */; };
 		2A5D3FC729C1C7886F504CDF9ACF9EAD /* Pods-ZHRichText_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D55273BF9FDC2ED8C01C7F12C1BB4652 /* Pods-ZHRichText_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51783502D67E0AC5C0BCE238B238A438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -62,6 +64,8 @@
 		074E212B200EF28100DB4356 /* NSAttributedString+ZHRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+ZHRichText.m"; path = "ZHRichText/Classes/NSAttributedString+ZHRichText.m"; sourceTree = "<group>"; };
 		074E219F20108BB500DB4356 /* UIFont+ZHRichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+ZHRichText.h"; sourceTree = "<group>"; };
 		074E21A020108BB500DB4356 /* UIFont+ZHRichText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ZHRichText.m"; sourceTree = "<group>"; };
+		074E21A520109CE000DB4356 /* ZHRichTextImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRichTextImage.h; sourceTree = "<group>"; };
+		074E21A620109CE000DB4356 /* ZHRichTextImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHRichTextImage.m; sourceTree = "<group>"; };
 		07957E6CCEF24A0530179D5A46DFE469 /* Pods_ZHRichText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHRichText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC4697E132C11C29AAE049C52AEEA6A /* ZHRichText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHRichText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8EF74B75DFF1CCDAE7B7C34C34C9F1 /* Pods-ZHRichText_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRichText_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				074E20F8200DFD3D00DB4356 /* ZHRichText.m */,
 				074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */,
 				074E20FD200DFE9100DB4356 /* ZHRichTextStyle.m */,
+				074E21A520109CE000DB4356 /* ZHRichTextImage.h */,
+				074E21A620109CE000DB4356 /* ZHRichTextImage.m */,
 				074E219F20108BB500DB4356 /* UIFont+ZHRichText.h */,
 				074E21A020108BB500DB4356 /* UIFont+ZHRichText.m */,
 				074E210B200E026400DB4356 /* NSString+ZHRichText.h */,
@@ -279,6 +285,7 @@
 				DEAABD1783E024A636175DD7C8310B7E /* ZHRichText-umbrella.h in Headers */,
 				074E2107200E022F00DB4356 /* ZHRichTextStyle.h in Headers */,
 				074E21A320108D0F00DB4356 /* UIFont+ZHRichText.h in Headers */,
+				074E21A920109CF900DB4356 /* ZHRichTextImage.h in Headers */,
 				074E2130200EF29A00DB4356 /* NSAttributedString+ZHRichText.h in Headers */,
 				074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */,
 				074E2114200E072400DB4356 /* ZHRichText-prefix.pch in Headers */,
@@ -377,6 +384,7 @@
 				074E211F200E075000DB4356 /* ZHPrivate.m in Sources */,
 				074E2133200EF49800DB4356 /* NSAttributedString+ZHRichText.m in Sources */,
 				074E21A420108D1500DB4356 /* UIFont+ZHRichText.m in Sources */,
+				074E21AA20109CF900DB4356 /* ZHRichTextImage.m in Sources */,
 				074E2115200E074100DB4356 /* ZHRichText.m in Sources */,
 				A255AF18FA87881425F2A8849A37FFF2 /* ZHRichText-dummy.m in Sources */,
 				074E2116200E074800DB4356 /* ZHRichTextStyle.m in Sources */,

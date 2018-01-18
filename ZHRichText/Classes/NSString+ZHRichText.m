@@ -8,6 +8,8 @@
 #import "NSString+ZHRichText.h"
 #import "ZHRichText.h"
 
+#define RTImplementation
+
 @implementation NSString(ZHRichText)
 
 - (ZHRichText *)rt {
