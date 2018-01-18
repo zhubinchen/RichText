@@ -17,6 +17,8 @@
 
 + (instancetype)create:(void(^)(ZHStyle *style))maker;
 
-@property(nonatomic,readonly) NSDictionary      *attributes;
+@property(readonly) NSDictionary      *attributes;
 
 @end
+
+

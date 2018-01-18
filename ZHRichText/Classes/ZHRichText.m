@@ -90,16 +90,6 @@
     };
 }
 
-- (NSAttributedString *(^)(void))done {
-    return ^(){
-        return self.attrStr;
-    };
-}
-
-- (ZHRichText *)attributeString {
-    return self;
-}
-
 - (ZHRichText *)addAttributes:(NSDictionary*)attrs {
     for (NSValue *range in self.ranges) {
         [self.attrStr addAttributes:attrs

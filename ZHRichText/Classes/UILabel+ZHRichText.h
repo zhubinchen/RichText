@@ -10,6 +10,6 @@
 
 @interface UILabel(ZHRichText)
 
-@property(nonatomic) id<ZHRichTextConvertible> richText;
+@property(readwrite) id<ZHRichTextConvertible> richText;
 
 @end

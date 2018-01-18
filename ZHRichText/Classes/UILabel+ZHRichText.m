@@ -10,9 +10,7 @@
 #import "NSAttributedString+ZHRichText.h"
 
 @interface ZHRichText ()
-
 @property (nonatomic,strong) NSMutableAttributedString *attrStr;
-
 @end
 
 @implementation UILabel(ZHRichText)

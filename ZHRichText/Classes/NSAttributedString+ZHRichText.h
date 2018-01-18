@@ -12,8 +12,8 @@
 
 @interface NSAttributedString(ZHRichText) <ZHRichTextConvertible>
 
-@property(nonatomic,readonly) ZHRichText*(^range)(NSInteger,NSInteger);
-@property(nonatomic,readonly) ZHRichText*(^matches)(NSString*);
-@property(nonatomic,readonly) ZHRichText* whole;
+@property(readonly) ZHRichText*(^range)(NSInteger,NSInteger);
+@property(readonly) ZHRichText*(^matches)(NSString*);
+@property(readonly) ZHRichText* whole;
 
 @end

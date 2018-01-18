@@ -10,11 +10,10 @@
 
 @class ZHRichText;
 
-// 实现CHStringConvertible协议的对象就可以拼接
 @protocol ZHRichTextConvertible
 
-@property(nonatomic,readonly) ZHRichText *rt;
-@property(nonatomic,readonly) ZHRichText *(^join)(id<ZHRichTextConvertible>);
+@property(readonly) ZHRichText *rt;
+@property(readonly) ZHRichText *(^join)(id<ZHRichTextConvertible>);
 
 @end
 
