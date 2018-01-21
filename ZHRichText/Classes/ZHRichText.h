@@ -13,6 +13,9 @@
 #import "NSAttributedString+ZHRichText.h"
 #import "UIFont+ZHRichText.h"
 #import "ZHRichTextImage.h"
+#import "UIImage+ZHRichText.h"
+#import "ZHRichTextConverter.h"
+#import "ZHRichTextImageConverter.h"
 
 @interface ZHRichText: NSObject<ZHRichTextConvertible>
 
@@ -31,9 +34,13 @@
 @property(readonly) ZHRichText*(^paragraphStyle)(NSParagraphStyle*);
 @property(readonly) ZHRichText*(^underline)(UIColor*);
 
+@property(readonly) NSUInteger length;
+
 - (instancetype)initWithString:(NSString *)str;
 
 - (instancetype)initWithAttributedString:(NSAttributedString *)attrStr;
+
+- (void)replaceTextInRange:(NSRange)range withText:(id<ZHRichTextConvertible>)text;
 
 @end
 

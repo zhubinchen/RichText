@@ -9,15 +9,16 @@
 
 @implementation  NSString(ZHPrivate)
 
-- (NSArray<NSValue *> *)matches:(NSString *)expStr {
+- (void)matches:(NSString *)exp usingBlock:(void(^)(NSRange))block {
     NSError *err = nil;
-    NSRegularExpression *exp = [NSRegularExpression regularExpressionWithPattern:expStr options:NSRegularExpressionCaseInsensitive error:&err];
+    NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:exp options:NSRegularExpressionCaseInsensitive error:&err];
     NSAssert(err == nil, err.localizedDescription);
-    NSMutableArray *ranges = [NSMutableArray array];
-    [exp enumerateMatchesInString:self options:NSMatchingReportCompletion range:NSMakeRange(0, self.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        [ranges addObject:[NSValue valueWithRange:result.range]];
+
+    [regExp enumerateMatchesInString:self options:NSMatchingReportCompletion range:NSMakeRange(0, self.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        if (result.range.location != NSNotFound) {
+            block(result.range);
+        }
     }];
-    return ranges;
 }
 
 @end

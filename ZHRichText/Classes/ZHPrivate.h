@@ -13,7 +13,8 @@ static inline NSValue* r(NSUInteger loc, NSUInteger len) {
 
 @interface NSString(ZHPrivate)
 
-- (NSArray<NSValue*>*)matches:(NSString*)expStr;
+- (void)matches:(NSString *)exp usingBlock:(void(^)(NSRange))block;
 
 @end
+
 

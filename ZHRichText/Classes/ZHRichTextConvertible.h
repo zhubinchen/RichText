@@ -13,6 +13,7 @@
 @protocol ZHRichTextConvertible
 
 @property(readonly) ZHRichText *rt;
+@property(readonly) NSUInteger length;
 @property(readonly) ZHRichText *(^join)(id<ZHRichTextConvertible>);
 
 @end

@@ -10,10 +10,15 @@
 
 @implementation ZHRichTextImage
 
+- (NSUInteger)length {
+    return 1;
+}
+
 + (instancetype)imageNamed:(NSString *)name size:(CGSize)size {
     ZHRichTextImage *image = [[ZHRichTextImage alloc] init];
     image.image = [UIImage imageNamed:name];
     image.size = size;
+    
     return image;
 }
 

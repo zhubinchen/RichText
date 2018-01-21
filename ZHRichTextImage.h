@@ -18,3 +18,4 @@
 + (instancetype)imageNamed:(NSString*)name size:(CGSize)size;
 
 @end
+

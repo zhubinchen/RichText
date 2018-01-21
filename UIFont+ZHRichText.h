@@ -15,6 +15,4 @@
 + (UIFont*(^)(CGFloat))medium;
 + (UIFont*(^)(NSString*))name;
 
-@property(readonly) UIFont*(^size)(CGFloat);
-
 @end

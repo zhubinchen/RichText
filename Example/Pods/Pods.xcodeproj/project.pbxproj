@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072A27EB2011F47400B3434A /* UIImage+ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A27E72011F44B00B3434A /* UIImage+ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		072A27EC2011F47400B3434A /* UIImage+ZHRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A27E82011F44B00B3434A /* UIImage+ZHRichText.m */; };
+		072A27F52011FE5B00B3434A /* ZHRichTextConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A27F12011FE2100B3434A /* ZHRichTextConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		072A27FB2012080200B3434A /* ZHRichTextImageConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A27F7201207FC00B3434A /* ZHRichTextImageConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		072A27FC2012080200B3434A /* ZHRichTextImageConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A27F8201207FC00B3434A /* ZHRichTextImageConverter.m */; };
 		074E2106200E022F00DB4356 /* ZHRichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20F7200DFD3D00DB4356 /* ZHRichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E2107200E022F00DB4356 /* ZHRichTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */ = {isa = PBXBuildFile; fileRef = 074E2109200E026400DB4356 /* ZHRichTextConvertible.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +54,11 @@
 /* Begin PBXFileReference section */
 		0219BE9D001BE322F46AA60D57ECE6BA /* Pods-ZHRichText_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRichText_Example-resources.sh"; sourceTree = "<group>"; };
 		05432B49CB4D79CAE2538B99582AC5BC /* ZHRichText-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRichText-umbrella.h"; sourceTree = "<group>"; };
+		072A27E72011F44B00B3434A /* UIImage+ZHRichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZHRichText.h"; sourceTree = "<group>"; };
+		072A27E82011F44B00B3434A /* UIImage+ZHRichText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZHRichText.m"; sourceTree = "<group>"; };
+		072A27F12011FE2100B3434A /* ZHRichTextConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRichTextConverter.h; sourceTree = "<group>"; };
+		072A27F7201207FC00B3434A /* ZHRichTextImageConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRichTextImageConverter.h; sourceTree = "<group>"; };
+		072A27F8201207FC00B3434A /* ZHRichTextImageConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHRichTextImageConverter.m; sourceTree = "<group>"; };
 		074E20F7200DFD3D00DB4356 /* ZHRichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHRichText.h; path = ZHRichText/Classes/ZHRichText.h; sourceTree = "<group>"; };
 		074E20F8200DFD3D00DB4356 /* ZHRichText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZHRichText.m; path = ZHRichText/Classes/ZHRichText.m; sourceTree = "<group>"; };
 		074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZHRichTextStyle.h; path = ZHRichText/Classes/ZHRichTextStyle.h; sourceTree = "<group>"; };
@@ -233,16 +243,21 @@
 			isa = PBXGroup;
 			children = (
 				074E2109200E026400DB4356 /* ZHRichTextConvertible.h */,
+				072A27F12011FE2100B3434A /* ZHRichTextConverter.h */,
 				074E20F7200DFD3D00DB4356 /* ZHRichText.h */,
 				074E20F8200DFD3D00DB4356 /* ZHRichText.m */,
 				074E20FC200DFE9100DB4356 /* ZHRichTextStyle.h */,
 				074E20FD200DFE9100DB4356 /* ZHRichTextStyle.m */,
 				074E21A520109CE000DB4356 /* ZHRichTextImage.h */,
 				074E21A620109CE000DB4356 /* ZHRichTextImage.m */,
+				072A27F7201207FC00B3434A /* ZHRichTextImageConverter.h */,
+				072A27F8201207FC00B3434A /* ZHRichTextImageConverter.m */,
 				074E219F20108BB500DB4356 /* UIFont+ZHRichText.h */,
 				074E21A020108BB500DB4356 /* UIFont+ZHRichText.m */,
 				074E210B200E026400DB4356 /* NSString+ZHRichText.h */,
 				074E210A200E026400DB4356 /* NSString+ZHRichText.m */,
+				072A27E72011F44B00B3434A /* UIImage+ZHRichText.h */,
+				072A27E82011F44B00B3434A /* UIImage+ZHRichText.m */,
 				074E2129200EF28100DB4356 /* NSAttributedString+ZHRichText.h */,
 				074E212B200EF28100DB4356 /* NSAttributedString+ZHRichText.m */,
 				074E2128200EF28100DB4356 /* UILabel+ZHRichText.h */,
@@ -278,13 +293,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072A27F52011FE5B00B3434A /* ZHRichTextConverter.h in Headers */,
 				074E2113200E040100DB4356 /* ZHPrivate.h in Headers */,
 				074E2131200EF29A00DB4356 /* UILabel+ZHRichText.h in Headers */,
 				074E2106200E022F00DB4356 /* ZHRichText.h in Headers */,
 				074E210E200E026400DB4356 /* NSString+ZHRichText.h in Headers */,
 				DEAABD1783E024A636175DD7C8310B7E /* ZHRichText-umbrella.h in Headers */,
+				072A27FB2012080200B3434A /* ZHRichTextImageConverter.h in Headers */,
 				074E2107200E022F00DB4356 /* ZHRichTextStyle.h in Headers */,
 				074E21A320108D0F00DB4356 /* UIFont+ZHRichText.h in Headers */,
+				072A27EB2011F47400B3434A /* UIImage+ZHRichText.h in Headers */,
 				074E21A920109CF900DB4356 /* ZHRichTextImage.h in Headers */,
 				074E2130200EF29A00DB4356 /* NSAttributedString+ZHRichText.h in Headers */,
 				074E210C200E026400DB4356 /* ZHRichTextConvertible.h in Headers */,
@@ -382,9 +400,11 @@
 			files = (
 				074E210D200E026400DB4356 /* NSString+ZHRichText.m in Sources */,
 				074E211F200E075000DB4356 /* ZHPrivate.m in Sources */,
+				072A27EC2011F47400B3434A /* UIImage+ZHRichText.m in Sources */,
 				074E2133200EF49800DB4356 /* NSAttributedString+ZHRichText.m in Sources */,
 				074E21A420108D1500DB4356 /* UIFont+ZHRichText.m in Sources */,
 				074E21AA20109CF900DB4356 /* ZHRichTextImage.m in Sources */,
+				072A27FC2012080200B3434A /* ZHRichTextImageConverter.m in Sources */,
 				074E2115200E074100DB4356 /* ZHRichText.m in Sources */,
 				A255AF18FA87881425F2A8849A37FFF2 /* ZHRichText-dummy.m in Sources */,
 				074E2116200E074800DB4356 /* ZHRichTextStyle.m in Sources */,

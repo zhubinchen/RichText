@@ -22,18 +22,19 @@
     [super viewDidLoad];
     
     // Style把多个属性放一起，方便复用
-    ZHRichTextStyle *style = [ZHRichTextStyle create:^(ZHRichTextStyle *style) {
-        style.font = UIFont.bold(16);
-        style.color = [UIColor darkGrayColor];
-        style.underline = [UIColor redColor];
-    }];
+//    ZHRichTextStyle *style = [ZHRichTextStyle create:^(ZHRichTextStyle *style) {
+//        style.font = UIFont.bold(16);
+//        style.color = [UIColor darkGrayColor];
+//        style.underline = [UIColor redColor];
+//    }];
     
-    self.testLabel.richText = @"String"; // 兼容NSString
-    self.testLabel.richText = @"RichText".whole.style(style) // 整体设置style
-                        .range(0,4).color([UIColor redColor]) // 0~4设为红色
-                        .matches(@"R").font(UIFont.bold(30)); // 给“R”设置字体
-    ZHRichTextImage *image = [ZHRichTextImage imageNamed:@"smile" size:CGSizeMake(30, 30)];
-    self.testLabel.richText = @"简单的图".join(image).join(@"文混排");
+//    self.testLabel.richText = @"String"; // 兼容NSString
+//    self.testLabel.richText = @"RichText".whole.style(style) // 整体设置style
+//                        .range(0,4).color([UIColor redColor]) // 0~4设为红色
+//                        .matches(@"R").font(UIFont.bold(30)); // 给“R”设置字体
+    
+//    ZHRichTextImage *image = [ZHRichTextImage imageNamed:@"smile" size:CGSizeMake(30, 30)];
+    self.testLabel.richText = @"[simle(30,30)]".parse([ZHRichTextImageConverter default]);
 }
 
 - (void)didReceiveMemoryWarning

@@ -45,7 +45,11 @@
 
 - (ZHRichText *(^)(NSString *))matches {
     return ^(NSString *expStr) {
-        self.ranges = [self.attrStr.string matches:expStr];
+        NSMutableArray *ranges = @[].mutableCopy;
+        [self.attrStr.string matches:expStr usingBlock:^(NSRange range) {
+            [ranges addObject:[NSValue valueWithRange:range]];
+        }];
+        self.ranges = ranges;
         return self;
     };
 }
@@ -105,4 +109,14 @@
         return self;
     };
 }
+
+- (void)replaceTextInRange:(NSRange)range withText:(id<ZHRichTextConvertible>)text {
+    [self.attrStr replaceCharactersInRange:range withAttributedString:text.rt.attrStr];
+    self.ranges = @[r(0, self.length)];
+}
+
+- (NSUInteger)length {
+    return self.attrStr.length;
+}
+
 @end

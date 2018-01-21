@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZHRichTextConvertible.h"
+#import "ZHRichTextConverter.h"
 
 @class ZHRichText;
 
@@ -14,6 +15,9 @@
 
 @property(readonly) ZHRichText*(^range)(NSInteger,NSInteger);
 @property(readonly) ZHRichText*(^matches)(NSString*);
+@property(readonly) ZHRichText*(^parse)(id<ZHRichTextConverter>);
 @property(readonly) ZHRichText* whole;
+
+- (ZHRichText*)richTextWithConverter:(id<ZHRichTextConverter>)converter;
 
 @end
