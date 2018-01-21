@@ -1,0 +1,25 @@
+//
+//  RTPrivate.m
+//  Pods-ZHRichText_Example
+//
+//  Created by zhubch on 2018/1/16.
+//
+
+#import "RTPrivate.h"
+
+@implementation  NSString(RTPrivate)
+
+- (void)matches:(NSString *)exp usingBlock:(void(^)(NSRange))block {
+    NSError *err = nil;
+    NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:exp options:NSRegularExpressionCaseInsensitive error:&err];
+    NSAssert(err == nil, err.localizedDescription);
+
+    [regExp enumerateMatchesInString:self options:NSMatchingReportCompletion range:NSMakeRange(0, self.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        if (result.range.location != NSNotFound) {
+            block(result.range);
+        }
+    }];
+}
+
+@end
+

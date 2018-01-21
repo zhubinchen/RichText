@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'ZHRichText_Example' do
-  pod 'ZHRichText', :path => '../'
+target 'RichText_Example' do
+  pod 'RichText', :path => '../'
 
-  target 'ZHRichText_Tests' do
+  target 'RichText_Tests' do
     inherit! :search_paths
 
     

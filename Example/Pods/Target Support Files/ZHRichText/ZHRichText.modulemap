@@ -1,6 +1,0 @@
-framework module ZHRichText {
-  umbrella header "ZHRichText-umbrella.h"
-
-  export *
-  module * { export * }
-}

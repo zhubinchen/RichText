@@ -1,0 +1,6 @@
+framework module RichText {
+  umbrella header "RichText-umbrella.h"
+
+  export *
+  module * { export * }
+}
