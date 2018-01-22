@@ -18,10 +18,12 @@
 @implementation RTViewController
 
 - (NSString *)pattern {
-    return @"http://[^\\s]*.com";
+    return @"\\[.+?\\]";
 }
+
 - (id<RTTextConvertible>)parse:(NSString *)text {
-    return @"链接".whole.color([UIColor blueColor]);
+    NSArray *arr = [text componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[(,)]"]];
+    return [RTImage imageNamed:arr[1] size:CGSizeMake([arr[2] intValue], [arr[3] intValue])];
 }
 
 - (void)viewDidLoad
@@ -41,9 +43,9 @@
     //                        .matches(@"R").font(UIFont.bold(30)); // 给“R”设置字体
     
 
-    RTImageParser *parser = [RTImageParser parser];
-    NSString *text = @"人生真是寂寞如雪啊[simle(30,30)]插个图片http://baidu.com人生真是寂寞如雪啊";
-    self.testLabel.richText = text.parseWith(parser).style(style).parseWith(self);
+//    实现RTParser协议，完成自定义解析。
+    NSString *text = @"人生真是寂寞如雪啊[smile(30,30)]插个图片";
+    self.testLabel.richText = text.parseWith(self).style(style);
 }
 
 @end

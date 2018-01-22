@@ -8,14 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "RTStyle.h"
 #import "RTTextConvertible.h"
-#import "UILabel+RichText.h"
-#import "NSString+RichText.h"
-#import "NSAttributedString+RichText.h"
-#import "UIFont+RichText.h"
-#import "RTImage.h"
-#import "UIImage+RichText.h"
 #import "RTParser.h"
-#import "RTImageParser.h"
 
 @interface RTText: NSObject<RTTextConvertible>
 

@@ -10,14 +10,12 @@
 		072A28A32014C53400B3434A /* RTStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A288D2014C53200B3434A /* RTStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28A42014C53400B3434A /* UIFont+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A288E2014C53200B3434A /* UIFont+RichText.m */; };
 		072A28A52014C53400B3434A /* RTParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A288F2014C53200B3434A /* RTParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		072A28A62014C53400B3434A /* RTImageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28902014C53200B3434A /* RTImageParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28A72014C53400B3434A /* UIFont+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28912014C53200B3434A /* UIFont+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28A82014C53400B3434A /* NSString+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28922014C53200B3434A /* NSString+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28A92014C53400B3434A /* RTTextConvertible.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28932014C53200B3434A /* RTTextConvertible.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28AA2014C53400B3434A /* NSAttributedString+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28942014C53200B3434A /* NSAttributedString+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28AB2014C53400B3434A /* NSString+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28952014C53200B3434A /* NSString+RichText.m */; };
 		072A28AC2014C53400B3434A /* UIImage+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28962014C53200B3434A /* UIImage+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		072A28AD2014C53400B3434A /* RTImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28972014C53200B3434A /* RTImageParser.m */; };
 		072A28AE2014C53400B3434A /* RTText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28982014C53200B3434A /* RTText.m */; };
 		072A28AF2014C53400B3434A /* UIImage+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28992014C53200B3434A /* UIImage+RichText.m */; };
 		072A28B02014C53400B3434A /* UILabel+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A289A2014C53300B3434A /* UILabel+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,14 +54,12 @@
 		072A288D2014C53200B3434A /* RTStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTStyle.h; path = RichText/Classes/RTStyle.h; sourceTree = "<group>"; };
 		072A288E2014C53200B3434A /* UIFont+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+RichText.m"; path = "RichText/Classes/UIFont+RichText.m"; sourceTree = "<group>"; };
 		072A288F2014C53200B3434A /* RTParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTParser.h; path = RichText/Classes/RTParser.h; sourceTree = "<group>"; };
-		072A28902014C53200B3434A /* RTImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTImageParser.h; path = RichText/Classes/RTImageParser.h; sourceTree = "<group>"; };
 		072A28912014C53200B3434A /* UIFont+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+RichText.h"; path = "RichText/Classes/UIFont+RichText.h"; sourceTree = "<group>"; };
 		072A28922014C53200B3434A /* NSString+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RichText.h"; path = "RichText/Classes/NSString+RichText.h"; sourceTree = "<group>"; };
 		072A28932014C53200B3434A /* RTTextConvertible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTTextConvertible.h; path = RichText/Classes/RTTextConvertible.h; sourceTree = "<group>"; };
 		072A28942014C53200B3434A /* NSAttributedString+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+RichText.h"; path = "RichText/Classes/NSAttributedString+RichText.h"; sourceTree = "<group>"; };
 		072A28952014C53200B3434A /* NSString+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RichText.m"; path = "RichText/Classes/NSString+RichText.m"; sourceTree = "<group>"; };
 		072A28962014C53200B3434A /* UIImage+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RichText.h"; path = "RichText/Classes/UIImage+RichText.h"; sourceTree = "<group>"; };
-		072A28972014C53200B3434A /* RTImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTImageParser.m; path = RichText/Classes/RTImageParser.m; sourceTree = "<group>"; };
 		072A28982014C53200B3434A /* RTText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTText.m; path = RichText/Classes/RTText.m; sourceTree = "<group>"; };
 		072A28992014C53200B3434A /* UIImage+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RichText.m"; path = "RichText/Classes/UIImage+RichText.m"; sourceTree = "<group>"; };
 		072A289A2014C53300B3434A /* UILabel+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+RichText.h"; path = "RichText/Classes/UILabel+RichText.h"; sourceTree = "<group>"; };
@@ -210,28 +206,26 @@
 		A8D4C7D93EC6C2E550047BFE79AC0B76 /* RichText */ = {
 			isa = PBXGroup;
 			children = (
-				072A28942014C53200B3434A /* NSAttributedString+RichText.h */,
-				072A289E2014C53300B3434A /* NSAttributedString+RichText.m */,
-				072A28922014C53200B3434A /* NSString+RichText.h */,
-				072A28952014C53200B3434A /* NSString+RichText.m */,
-				072A289D2014C53300B3434A /* RTImage.h */,
-				072A28A02014C53300B3434A /* RTImage.m */,
-				072A28902014C53200B3434A /* RTImageParser.h */,
-				072A28972014C53200B3434A /* RTImageParser.m */,
-				072A288F2014C53200B3434A /* RTParser.h */,
-				072A289F2014C53300B3434A /* RTPrivate.h */,
-				072A289B2014C53300B3434A /* RTPrivate.m */,
-				072A288D2014C53200B3434A /* RTStyle.h */,
-				072A28A12014C53300B3434A /* RTStyle.m */,
 				072A289C2014C53300B3434A /* RTText.h */,
 				072A28982014C53200B3434A /* RTText.m */,
-				072A28932014C53200B3434A /* RTTextConvertible.h */,
+				072A288D2014C53200B3434A /* RTStyle.h */,
+				072A28A12014C53300B3434A /* RTStyle.m */,
+				072A289D2014C53300B3434A /* RTImage.h */,
+				072A28A02014C53300B3434A /* RTImage.m */,
+				072A28922014C53200B3434A /* NSString+RichText.h */,
+				072A28952014C53200B3434A /* NSString+RichText.m */,
+				072A28942014C53200B3434A /* NSAttributedString+RichText.h */,
+				072A289E2014C53300B3434A /* NSAttributedString+RichText.m */,
 				072A28912014C53200B3434A /* UIFont+RichText.h */,
 				072A288E2014C53200B3434A /* UIFont+RichText.m */,
 				072A28962014C53200B3434A /* UIImage+RichText.h */,
 				072A28992014C53200B3434A /* UIImage+RichText.m */,
+				072A288F2014C53200B3434A /* RTParser.h */,
+				072A28932014C53200B3434A /* RTTextConvertible.h */,
 				072A289A2014C53300B3434A /* UILabel+RichText.h */,
 				072A28A22014C53300B3434A /* UILabel+RichText.m */,
+				072A289F2014C53300B3434A /* RTPrivate.h */,
+				072A289B2014C53300B3434A /* RTPrivate.m */,
 				6C2F294106DB6DC86C8096993BC88896 /* Support Files */,
 			);
 			name = RichText;
@@ -297,7 +291,6 @@
 				072A28B52014C53400B3434A /* RTPrivate.h in Headers */,
 				072A28A52014C53400B3434A /* RTParser.h in Headers */,
 				072A28B32014C53400B3434A /* RTImage.h in Headers */,
-				072A28A62014C53400B3434A /* RTImageParser.h in Headers */,
 				072A28B22014C53400B3434A /* RTText.h in Headers */,
 				072A28AC2014C53400B3434A /* UIImage+RichText.h in Headers */,
 				072A28BA2014C56400B3434A /* RichText.h in Headers */,
@@ -401,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				072A28AF2014C53400B3434A /* UIImage+RichText.m in Sources */,
-				072A28AD2014C53400B3434A /* RTImageParser.m in Sources */,
 				BCB1E2978180896015B75939C6750771 /* RichText-dummy.m in Sources */,
 				072A28B72014C53400B3434A /* RTStyle.m in Sources */,
 				072A28AB2014C53400B3434A /* NSString+RichText.m in Sources */,

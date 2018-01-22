@@ -20,14 +20,20 @@
     }
     __block NSUInteger offset = 0;
     [self matches:converter.pattern usingBlock:^(NSRange range) {
-        NSString *text = [self substringWithRange:range];
-        id<RTTextConvertible> rt = [converter parse:text];
         if (range.location == NSNotFound) {
             return ;
         }
         if (range.length == 0) {
             return ;
         }
+        
+        NSString *text = [self substringWithRange:range];
+        id<RTTextConvertible> rt = [converter parse:text];
+
+        if (rt.length == 0) {
+            return ;
+        }
+
         range.location = range.location - offset;
         [richtext replaceTextInRange:range withText:rt];
         offset += range.length - rt.length;

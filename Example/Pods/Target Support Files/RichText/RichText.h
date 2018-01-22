@@ -17,6 +17,5 @@
 #import "RTImage.h"
 #import "UIImage+RichText.h"
 #import "RTParser.h"
-#import "RTImageParser.h"
 #import "RTText.h"
 #endif /* RichText_h */
