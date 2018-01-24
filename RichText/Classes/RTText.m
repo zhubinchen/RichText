@@ -11,7 +11,7 @@
 @interface RTText ()
 
 @property (nonatomic,strong) NSArray<NSValue*>* ranges;
-@property (nonatomic,strong) NSMutableAttributedString *attrStr;
+@property (nonatomic,strong) NSMutableAttributedString *attrString;
 
 @end
 
@@ -19,14 +19,14 @@
 
 - (instancetype)initWithString:(NSString *)str{
     if (self = [super init]) {
-        self.attrStr = [[NSMutableAttributedString alloc] initWithString:str];
+        self.attrString = [[NSMutableAttributedString alloc] initWithString:str];
     }
     return self;
 }
 
-- (instancetype)initWithAttributedString:(NSAttributedString *)attrStr {
+- (instancetype)initWithAttributedString:(NSAttributedString *)attrString {
     if (self = [super init]) {
-        self.attrStr = attrStr.mutableCopy;
+        self.attrString = attrString.mutableCopy;
     }
     return self;
 }
@@ -39,14 +39,14 @@
 }
 
 - (RTText *)whole {
-    self.ranges = @[r(0, self.attrStr.length)];
+    self.ranges = @[r(0, self.attrString.length)];
     return self;
 }
 
 - (RTText *(^)(NSString *))matches {
     return ^(NSString *expStr) {
         NSMutableArray *ranges = @[].mutableCopy;
-        [self.attrStr.string matches:expStr usingBlock:^(NSRange range) {
+        [self.attrString.string matches:expStr usingBlock:^(NSRange range) {
             [ranges addObject:[NSValue valueWithRange:range]];
         }];
         self.ranges = ranges;
@@ -56,7 +56,7 @@
 
 - (RTText *)rt {
     if (_ranges == nil) {
-        self.ranges = @[r(0, self.attrStr.length)];
+        self.ranges = @[r(0, self.attrString.length)];
     }
     return self;
 }
@@ -96,7 +96,7 @@
 
 - (RTText *)addAttributes:(NSDictionary*)attrs {
     for (NSValue *range in self.ranges) {
-        [self.attrStr addAttributes:attrs
+        [self.attrString addAttributes:attrs
                               range:range.rangeValue];
         
     }
@@ -105,18 +105,18 @@
 
 - (RTText *(^)(id<RTTextConvertible>))join {
     return ^(id<RTTextConvertible> text) {
-        [self.attrStr appendAttributedString:text.rt.attrStr];
+        [self.attrString appendAttributedString:text.rt.attrString];
         return self;
     };
 }
 
 - (void)replaceTextInRange:(NSRange)range withText:(id<RTTextConvertible>)text {
-    [self.attrStr replaceCharactersInRange:range withAttributedString:text.rt.attrStr];
+    [self.attrString replaceCharactersInRange:range withAttributedString:text.rt.attrString];
     self.ranges = @[r(0, self.length)];
 }
 
 - (RTText*)richTextWithParser:(id<RTParser>)converter {
-    NSString *str = self.attrStr.string;
+    NSString *str = self.attrString.string;
     if (converter == nil) {
         return self;
     }
@@ -144,7 +144,7 @@
 }
 
 - (NSUInteger)length {
-    return self.attrStr.length;
+    return self.attrString.length;
 }
 
 @end

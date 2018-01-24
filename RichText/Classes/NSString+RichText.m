@@ -12,7 +12,6 @@
 
 @implementation NSString(RichText)
 
-
 - (RTText*)richTextWithParser:(id<RTParser>)converter {
     RTText *richtext = [[RTText alloc] initWithString:self];
     if (converter == nil) {

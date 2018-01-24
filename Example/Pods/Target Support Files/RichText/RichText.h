@@ -14,7 +14,6 @@
 #import "NSString+RichText.h"
 #import "NSAttributedString+RichText.h"
 #import "UIFont+RichText.h"
-#import "RTImage.h"
 #import "UIImage+RichText.h"
 #import "RTParser.h"
 #import "RTText.h"

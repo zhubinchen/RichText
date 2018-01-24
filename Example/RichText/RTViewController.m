@@ -23,7 +23,7 @@
 
 - (id<RTTextConvertible>)parse:(NSString *)text {
     NSArray *arr = [text componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[(,)]"]];
-    return [RTImage imageNamed:arr[1] size:CGSizeMake([arr[2] intValue], [arr[3] intValue])];
+    return [UIImage imageNamed:arr[1]].withSize([arr[2] intValue], [arr[3] intValue]);
 }
 
 - (void)viewDidLoad
@@ -44,8 +44,10 @@
     
 
 //    实现RTParser协议，完成自定义解析。
-    NSString *text = @"人生真是寂寞如雪啊[smile(30,30)]插个图片";
-    self.testLabel.richText = text.parseWith(self).style(style);
+    NSString *text = @"人生真是寂寞如雪啊插个图片";
+    
+    UIImage *image = [UIImage imageNamed:@"smile"];
+    self.testLabel.richText = text.whole.style(style).join(image);
 }
 
 @end

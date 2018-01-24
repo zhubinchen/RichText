@@ -13,8 +13,8 @@
 @protocol RTTextConvertible
 
 @property(readonly) RTText *rt;
-@property(readonly) NSUInteger length;
 @property(readonly) RTText *(^join)(id<RTTextConvertible>);
+@property(readonly) NSUInteger length;
 
 @end
 

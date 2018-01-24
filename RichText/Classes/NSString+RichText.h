@@ -18,6 +18,4 @@
 @property(readonly) RTText*(^parseWith)(id<RTParser>);
 @property(readonly) RTText* whole;
 
-- (RTText*)richTextWithParser:(id<RTParser>)converter;
-
 @end

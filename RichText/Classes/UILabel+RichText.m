@@ -10,13 +10,13 @@
 #import "NSAttributedString+RichText.h"
 
 @interface RTText ()
-@property (nonatomic,strong) NSMutableAttributedString *attrStr;
+@property (nonatomic,strong) NSMutableAttributedString *attrString;
 @end
 
 @implementation UILabel(RichText)
 
 - (void)setRichText:(id<RTTextConvertible>)richText {
-    self.attributedText = richText.rt.attrStr;
+    self.attributedText = richText.rt.attrString;
 }
 
 - (id<RTTextConvertible>)richText {

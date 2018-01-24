@@ -28,11 +28,9 @@
 @property(readonly) RTText*(^underline)(UIColor*);
 @property(readonly) RTText*(^parseWith)(id<RTParser>);
 
-@property(readonly) NSUInteger length;
-
 - (instancetype)initWithString:(NSString *)str;
 
-- (instancetype)initWithAttributedString:(NSAttributedString *)attrStr;
+- (instancetype)initWithAttributedString:(NSAttributedString *)attrString;
 
 - (void)replaceTextInRange:(NSRange)range withText:(id<RTTextConvertible>)text;
 

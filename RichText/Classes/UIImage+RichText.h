@@ -6,10 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RTImage.h"
+#import "RTTextConvertible.h"
 
-@interface UIImage(RichText)
+@interface UIImage(RichText) <RTTextConvertible>
 
-@property(readonly) RTImage*(^withSize)(CGFloat,CGFloat);
+@property(readonly) UIImage*(^withSize)(CGFloat,CGFloat);
 
 @end
