@@ -19,6 +19,7 @@
 
 - (instancetype)initWithString:(NSString *)str{
     if (self = [super init]) {
+        
         self.attrString = [[NSMutableAttributedString alloc] initWithString:str];
     }
     return self;
@@ -106,6 +107,7 @@
 - (RTText *(^)(id<RTTextConvertible>))join {
     return ^(id<RTTextConvertible> text) {
         [self.attrString appendAttributedString:text.rt.attrString];
+        self.ranges = @[r(0, self.length)];
         return self;
     };
 }
@@ -124,10 +126,7 @@
     [str matches:converter.pattern usingBlock:^(NSRange range) {
         NSString *text = [str substringWithRange:range];
         id<RTTextConvertible> rt = [converter parse:text];
-        if (range.location == NSNotFound) {
-            return ;
-        }
-        if (range.length == 0) {
+        if (range.location == NSNotFound || range.length == 0) {
             return ;
         }
         range.location = range.location - offset;

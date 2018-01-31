@@ -43,11 +43,10 @@
     //                        .matches(@"R").font(UIFont.bold(30)); // 给“R”设置字体
     
 
-//    实现RTParser协议，完成自定义解析。
-    NSString *text = @"人生真是寂寞如雪啊插个图片";
+    NSString *text = @"人生真是寂寞如雪啊";
     
     UIImage *image = [UIImage imageNamed:@"smile"];
-    self.testLabel.richText = text.whole.style(style).join(image);
+    self.testLabel.richText = text.join(image).join(@"插个图片").style(style);
 }
 
 @end
