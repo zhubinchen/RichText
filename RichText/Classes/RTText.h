@@ -7,16 +7,17 @@
 
 #import <UIKit/UIKit.h>
 #import "RTStyle.h"
-#import "RTTextConvertible.h"
-#import "RTParser.h"
+#import "RTProtocols.h"
 
-@interface RTText: NSObject<RTTextConvertible, RTRangeable, RTStyleable>
+typedef id<RTText>(^Parser)(NSString* string);
 
-- (instancetype)initWithString:(NSString *)str;
+@interface RTText: NSObject<RTText, RTRangeable, RTStyleable>
 
-- (instancetype)initWithAttributedString:(NSAttributedString *)attrString;
+- (instancetype)initWithText:(id<RTText> )text;
 
-- (void)replaceTextInRange:(NSRange)range withText:(id<RTTextConvertible>)text;
+- (void)replaceTextInRange:(NSRange)range withText:(id<RTText>)text;
+
+- (void)replaceTextMatchedPattern:(NSString*)pattern withParser:(Parser)parser;
 
 @end
 

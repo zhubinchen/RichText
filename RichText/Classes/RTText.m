@@ -11,25 +11,32 @@
 @interface RTText ()
 
 @property (nonatomic,strong) NSArray<NSValue*>* ranges;
-@property (nonatomic,strong) NSMutableAttributedString *attrString;
 
 @end
 
 @implementation RTText
+{
+    NSMutableAttributedString *_attributedString;
+}
 
-- (instancetype)initWithString:(NSString *)str{
+- (instancetype)init {
+    return [self initWithText:nil];
+}
+
+- (instancetype)initWithText:(id<RTText>)text {
     if (self = [super init]) {
-        
-        self.attrString = [[NSMutableAttributedString alloc] initWithString:str];
+        if (text) {
+            _attributedString = text.attributedString.mutableCopy;
+        } else {
+            _attributedString = [[NSMutableAttributedString alloc] init];
+        }
+        self.ranges = @[r(0, self.length)];
     }
     return self;
 }
 
-- (instancetype)initWithAttributedString:(NSAttributedString *)attrString {
-    if (self = [super init]) {
-        self.attrString = attrString.mutableCopy;
-    }
-    return self;
+- (NSAttributedString *)attributedString {
+    return _attributedString;
 }
 
 - (RTText *(^)(NSInteger, NSInteger))range {
@@ -39,27 +46,22 @@
     };
 }
 
-- (RTText *)whole {
-    self.ranges = @[r(0, self.attrString.length)];
-    return self;
+- (RTText *(^)())whole {
+    return ^() {
+        self.ranges = @[r(0, self.length)];
+        return self;
+    };
 }
 
 - (RTText *(^)(NSString *))matches {
     return ^(NSString *expStr) {
         NSMutableArray *ranges = @[].mutableCopy;
-        [self.attrString.string matches:expStr usingBlock:^(NSRange range) {
+        [_attributedString.string matches:expStr usingBlock:^(NSRange range) {
             [ranges addObject:[NSValue valueWithRange:range]];
         }];
         self.ranges = ranges;
         return self;
     };
-}
-
-- (RTText *)rt {
-    if (_ranges == nil) {
-        self.ranges = @[r(0, self.attrString.length)];
-    }
-    return self;
 }
 
 - (RTText *(^)(RTStyle *))style {
@@ -97,35 +99,35 @@
 
 - (RTText *)addAttributes:(NSDictionary*)attrs {
     for (NSValue *range in self.ranges) {
-        [self.attrString addAttributes:attrs
+        [_attributedString addAttributes:attrs
                               range:range.rangeValue];
         
     }
     return self;
 }
 
-- (RTText *(^)(id<RTTextConvertible>))join {
-    return ^(id<RTTextConvertible> text) {
-        [self.attrString appendAttributedString:text.rt.attrString];
+- (RTText *(^)(id<RTText>))join {
+    return ^(id<RTText> text) {
+        [_attributedString appendAttributedString:text.attributedString];
         self.ranges = @[r(0, self.length)];
         return self;
     };
 }
 
-- (void)replaceTextInRange:(NSRange)range withText:(id<RTTextConvertible>)text {
-    [self.attrString replaceCharactersInRange:range withAttributedString:text.rt.attrString];
+- (void)replaceTextInRange:(NSRange)range withText:(id<RTText>)text {
+    [_attributedString replaceCharactersInRange:range withAttributedString:text.attributedString];
     self.ranges = @[r(0, self.length)];
 }
 
-- (RTText*)richTextWithParser:(id<RTParser>)converter {
-    NSString *str = self.attrString.string;
-    if (converter == nil) {
-        return self;
+- (void)replaceTextMatchedPattern:(NSString *)pattern withParser:(Parser)parser {
+    NSString *str = _attributedString.string;
+    if (parser == nil) {
+        return;
     }
     __block NSUInteger offset = 0;
-    [str matches:converter.pattern usingBlock:^(NSRange range) {
+    [str matches:pattern usingBlock:^(NSRange range) {
         NSString *text = [str substringWithRange:range];
-        id<RTTextConvertible> rt = [converter parse:text];
+        id<RTText> rt = parser(text);
         if (range.location == NSNotFound || range.length == 0) {
             return ;
         }
@@ -133,17 +135,10 @@
         [self replaceTextInRange:range withText:rt];
         offset += range.length - rt.length;
     }];
-    return self;
-}
-
-- (RTText *(^)(id<RTParser>))parseWith {
-    return ^(id<RTParser> parser){
-        return [self richTextWithParser:parser];
-    };
 }
 
 - (NSUInteger)length {
-    return self.attrString.length;
+    return self.attributedString.length;
 }
 
 @end

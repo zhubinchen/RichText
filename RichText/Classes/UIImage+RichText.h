@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RTTextConvertible.h"
+#import "RTText.h"
 
-@interface UIImage(RichText) <RTTextConvertible>
+@interface UIImage(RichText) <RTText>
 
 @property(readonly) UIImage*(^withSize)(CGFloat,CGFloat);
 

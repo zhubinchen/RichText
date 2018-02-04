@@ -31,9 +31,9 @@
         [attrs setObject:@(NSUnderlineStyleSingle) forKey:NSUnderlineStyleAttributeName];
         [attrs setObject:_underline forKey:NSUnderlineColorAttributeName];
     }
-    if (_paragraphStyle) {
-        [attrs setObject:_paragraphStyle forKey:NSParagraphStyleAttributeName];
-    }
+//    if (_paragraphStyle) {
+//        [attrs setObject:_paragraphStyle forKey:NSParagraphStyleAttributeName];
+//    }
     return attrs;
 }
 

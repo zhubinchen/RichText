@@ -6,14 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RTTextConvertible.h"
+#import "RTText.h"
 
-@class RTText;
-
-@interface NSAttributedString(RichText) <RTTextConvertible>
-
-@property(readonly) RTText*(^range)(NSInteger,NSInteger);
-@property(readonly) RTText*(^matches)(NSString*);
-@property(readonly) RTText* whole;
+@interface NSAttributedString(RichText) <RTText,RTRangeable,RTStyleable>
 
 @end

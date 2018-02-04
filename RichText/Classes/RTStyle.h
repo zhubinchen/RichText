@@ -13,7 +13,6 @@
 @property(nonatomic,strong) UIFont              *font;
 @property(nonatomic,strong) UIColor             *background;
 @property(nonatomic,strong) UIColor             *underline;
-@property(nonatomic,strong) NSParagraphStyle    *paragraphStyle;
 
 + (instancetype)create:(void(^)(RTStyle *style))maker;
 

@@ -9,12 +9,11 @@
 #define RichText_h
 
 #import "RTStyle.h"
-#import "RTTextConvertible.h"
-#import "UILabel+RichText.h"
+#import "RTText.h"
+#import "UIExtensions.h"
 #import "NSString+RichText.h"
 #import "NSAttributedString+RichText.h"
 #import "UIFont+RichText.h"
 #import "UIImage+RichText.h"
-#import "RTParser.h"
 #import "RTText.h"
 #endif /* RichText_h */

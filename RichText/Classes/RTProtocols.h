@@ -1,22 +1,23 @@
 //
-//  RTTextConvertible.h
+//  RTProtocols.h
 //  Pods
 //
 //  Created by zhubch on 2018/1/16.
 //
 
-#ifndef RTTextConvertible_h
-#define RTTextConvertible_h
+#ifndef RTProtocols_h
+#define RTProtocols_h
 
 @class RTText;
 @class RTStyle;
 @protocol RTParser;
 
-@protocol RTTextConvertible
+@protocol RTText
 
-@property(readonly) RTText *rt;
-@property(readonly) RTText *(^join)(id<RTTextConvertible>);
+@property(readonly) NSAttributedString *attributedString;
 @property(readonly) NSUInteger length;
+
+@property(readonly) RTText*(^join)(id<RTText>);
 
 @end
 
@@ -24,7 +25,7 @@
 
 @property(readonly) RTText*(^range)(NSInteger,NSInteger); // 指定范围
 @property(readonly) RTText*(^matches)(NSString*); // 匹配正则的范围
-@property(readonly) RTText* whole; // 全部范围
+@property(readonly) RTText*(^whole)(); // 全部范围
 
 @end
 
@@ -37,23 +38,30 @@
 @property(readonly) RTText*(^color)(UIColor*);
 @property(readonly) RTText*(^background)(UIColor*);
 @property(readonly) RTText*(^font)(UIFont*);
-@property(readonly) RTText*(^paragraphStyle)(NSParagraphStyle*);
 @property(readonly) RTText*(^underline)(UIColor*);
-@property(readonly) RTText*(^parseWith)(id<RTParser>);
 
 @end
 
+#define rt_imp - (RTText *)rt { \
+    return [[RTText alloc] initWithText:self]; \
+}
 
-#define rt1(func,pramaType) - (RTText *(^)(pramaType))func { \
-return ^(pramaType prama) { \
+#define rt_imp0(func) - (RTText *(^)())func { \
+return ^() { \
+return self.rt.func();\
+};\
+}
+
+#define rt_imp1(func) - (RTText *(^)(id))func { \
+return ^(id prama) { \
 return self.rt.func(prama);\
 };\
 }
 
-#define rt2(func,pramaType1,pramaType2) - (RTText *(^)(pramaType1,pramaType2))func { \
-return ^(pramaType1 prama1,pramaType2 prama2) { \
+#define rt_imp2(func) - (RTText *(^)(NSInteger,NSInteger))func { \
+return ^(NSInteger prama1,NSInteger prama2) { \
 return self.rt.func(prama1,prama2);\
 };\
 }
 
-#endif /* RTTextConvertible_h */
+#endif /* RTProtocols_h */

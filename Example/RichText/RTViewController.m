@@ -9,7 +9,7 @@
 #import "RTViewController.h"
 #import <RichText/RichText.h>
 
-@interface RTViewController () <RTParser>
+@interface RTViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
@@ -21,7 +21,7 @@
     return @"\\[.+?\\]";
 }
 
-- (id<RTTextConvertible>)parse:(NSString *)text {
+- (id<RTText>)parse:(NSString *)text {
     NSArray *arr = [text componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[(,)]"]];
     return [UIImage imageNamed:arr[1]].withSize([arr[2] intValue], [arr[3] intValue]);
 }

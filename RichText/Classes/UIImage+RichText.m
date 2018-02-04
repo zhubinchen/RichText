@@ -7,27 +7,24 @@
 
 #import "UIImage+RichText.h"
 #import "RTText.h"
+#import "NSAttributedString+RichText.h"
 
 @implementation UIImage(RichText)
 
-- (RTText *(^)(id<RTTextConvertible>))join {
-    return ^(id<RTTextConvertible> text){
-        return self.rt.join(text);
-    };
-}
+rt_imp
+rt_imp1(join)
 
 -(NSUInteger)length {
     return 1;
 }
 
-- (RTText *)rt {
+- (NSAttributedString *)attributedString {
     CGFloat scale = [UIScreen mainScreen].scale;
     
     NSTextAttachment *attach = [[NSTextAttachment alloc] init];
     attach.bounds = CGRectMake(0, 0, self.size.width / scale, self.size.height / scale);
     attach.image = self;
-    NSAttributedString *attrStringing = [NSAttributedString attributedStringWithAttachment:attach];
-    return [[RTText alloc] initWithAttributedString:attrStringing];
+    return [NSAttributedString attributedStringWithAttachment:attach];
 }
 
 - (UIImage *(^)(CGFloat, CGFloat))withSize {

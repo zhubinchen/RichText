@@ -10,18 +10,25 @@
 
 @implementation NSAttributedString(ZHRichText)
 
-rt1(matches, NSString*)
-rt1(parseWith, id<RTParser>)
-rt1(join, id<RTTextConvertible>)
-rt2(range, NSInteger, NSInteger)
+rt_imp
+rt_imp1(join)
 
-- (RTText *)rt {
-    RTText *rt = [[RTText alloc] initWithAttributedString:self];
-    return rt.range(0, self.length);
-}
+#pragma mark Rangeable
 
-- (RTText *)whole {
-    return self.rt;
+rt_imp0(whole)
+rt_imp1(matches)
+rt_imp2(range)
+
+#pragma mark Styleable
+
+rt_imp1(color)
+rt_imp1(font)
+rt_imp1(background)
+rt_imp1(style)
+rt_imp1(underline)
+
+- (NSAttributedString *)attributedString {
+    return self;
 }
 
 @end
