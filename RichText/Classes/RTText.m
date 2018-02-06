@@ -48,8 +48,7 @@
 
 - (RTText *(^)())whole {
     return ^() {
-        self.ranges = @[r(0, self.length)];
-        return self;
+        return self.range(0,self.length);
     };
 }
 
@@ -126,14 +125,16 @@
     }
     __block NSUInteger offset = 0;
     [str matches:pattern usingBlock:^(NSRange range) {
-        NSString *text = [str substringWithRange:range];
-        id<RTText> rt = parser(text);
         if (range.location == NSNotFound || range.length == 0) {
             return ;
         }
         range.location = range.location - offset;
-        [self replaceTextInRange:range withText:rt];
-        offset += range.length - rt.length;
+        NSString *text = [str substringWithRange:range];
+        id<RTText> rt = parser(text);
+        if (rt) {
+            [self replaceTextInRange:range withText:rt];
+            offset += range.length - rt.length;
+        }
     }];
 }
 
@@ -142,3 +143,14 @@
 }
 
 @end
+
+RTText *rt(id<RTText> text, ...) {
+    va_list texts;
+    va_start(texts, text);
+    RTText *ret = [[RTText alloc] initWithText:text];
+    while ((text = va_arg(texts, id<RTText>))) {
+        ret.join(text);
+    }
+    va_end(texts);
+    return ret;
+}

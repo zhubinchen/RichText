@@ -7,16 +7,19 @@
 
 #import <UIKit/UIKit.h>
 #import "RTProtocols.h"
+#import "RTStyle.h"
 
 @interface UILabel(RichText)
 
 @property(readwrite) id<RTText> richText;
+@property(readwrite) RTStyle *style;
 
 @end
 
 @interface UITextView(RichText)
 
 @property(readwrite) id<RTText> richText;
+@property(readwrite) RTStyle *style;
 
 @end
 
@@ -24,6 +27,7 @@
 
 @property(readwrite) id<RTText> richText;
 @property(readwrite) id<RTText> richTextPlaceholder;
+@property(readwrite) RTStyle *style;
 
 @end
 

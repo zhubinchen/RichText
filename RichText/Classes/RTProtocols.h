@@ -10,7 +10,6 @@
 
 @class RTText;
 @class RTStyle;
-@protocol RTParser;
 
 @protocol RTText
 
@@ -18,6 +17,12 @@
 @property(readonly) NSUInteger length;
 
 @property(readonly) RTText*(^join)(id<RTText>);
+
+@property(readonly) RTText*(^style)(RTStyle*);
+@property(readonly) RTText*(^color)(UIColor*);
+@property(readonly) RTText*(^background)(UIColor*);
+@property(readonly) RTText*(^font)(UIFont*);
+@property(readonly) RTText*(^underline)(UIColor*);
 
 @end
 
@@ -29,38 +34,26 @@
 
 @end
 
-@protocol RTStyleable
 
-// 用style对象设置属性
-@property(readonly) RTText*(^style)(RTStyle*);
-
-// 设置单个属性
-@property(readonly) RTText*(^color)(UIColor*);
-@property(readonly) RTText*(^background)(UIColor*);
-@property(readonly) RTText*(^font)(UIFont*);
-@property(readonly) RTText*(^underline)(UIColor*);
-
-@end
-
-#define rt_imp - (RTText *)rt { \
+#define _rt_imp - (RTText *)_rt { \
     return [[RTText alloc] initWithText:self]; \
 }
 
-#define rt_imp0(func) - (RTText *(^)())func { \
+#define _rt_imp0(func) - (RTText *(^)())func { \
 return ^() { \
-return self.rt.func();\
+return self._rt.func();\
 };\
 }
 
-#define rt_imp1(func) - (RTText *(^)(id))func { \
+#define _rt_imp1(func) - (RTText *(^)(id))func { \
 return ^(id prama) { \
-return self.rt.func(prama);\
+return self._rt.func(prama);\
 };\
 }
 
-#define rt_imp2(func) - (RTText *(^)(NSInteger,NSInteger))func { \
+#define _rt_imp2(func) - (RTText *(^)(NSInteger,NSInteger))func { \
 return ^(NSInteger prama1,NSInteger prama2) { \
-return self.rt.func(prama1,prama2);\
+return self._rt.func(prama1,prama2);\
 };\
 }
 

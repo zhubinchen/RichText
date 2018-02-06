@@ -11,8 +11,16 @@
 
 @implementation UIImage(RichText)
 
-rt_imp
-rt_imp1(join)
+_rt_imp
+_rt_imp1(join)
+
+#pragma mark Styleable
+
+_rt_imp1(color)
+_rt_imp1(font)
+_rt_imp1(background)
+_rt_imp1(style)
+_rt_imp1(underline)
 
 -(NSUInteger)length {
     return 1;
