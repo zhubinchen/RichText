@@ -63,31 +63,31 @@
     };
 }
 
-- (RTText *(^)(RTStyle *))style {
+- (RTText *(^)(RTStyle *))setStyle {
     return ^(RTStyle *style) {
         return [self addAttributes:style.attributes];
     };
 }
 
-- (RTText *(^)(UIColor *))color {
+- (RTText *(^)(UIColor *))setColor {
     return ^(UIColor *color) {
         return [self addAttributes:@{NSForegroundColorAttributeName:color}];
     };
 }
 
-- (RTText *(^)(UIFont *))font {
+- (RTText *(^)(UIFont *))setFont {
     return ^(UIFont *font) {
         return [self addAttributes:@{NSFontAttributeName:font}];
     };
 }
 
-- (RTText *(^)(UIColor *))background {
+- (RTText *(^)(UIColor *))setBackground {
     return ^(UIColor *color) {
         return [self addAttributes:@{NSBackgroundColorAttributeName:color}];
     };
 }
 
-- (RTText *(^)(UIColor*))underline {
+- (RTText *(^)(UIColor*))setUnderline {
     return ^(UIColor *color) {
         return [self addAttributes:@{
                                      NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle),
@@ -97,6 +97,9 @@
 }
 
 - (RTText *)addAttributes:(NSDictionary*)attrs {
+    if (attrs == nil) {
+        return self;
+    }
     for (NSValue *range in self.ranges) {
         [_attributedString addAttributes:attrs
                               range:range.rangeValue];
@@ -141,6 +144,7 @@
 - (NSUInteger)length {
     return self.attributedString.length;
 }
+
 
 @end
 

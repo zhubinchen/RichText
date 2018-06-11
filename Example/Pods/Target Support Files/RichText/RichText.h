@@ -10,10 +10,12 @@
 
 #import "RTStyle.h"
 #import "RTText.h"
-#import "UIExtensions.h"
 #import "NSString+RichText.h"
 #import "NSAttributedString+RichText.h"
-#import "UIFont+RichText.h"
 #import "UIImage+RichText.h"
-#import "RTText.h"
+#import "UIFont+RichText.h"
+#import "UILabel+RichText.h"
+#import "UIButton+RichText.h"
+#import "UITextField+RichText.h"
+#import "UITextView+RichText.h"
 #endif /* RichText_h */

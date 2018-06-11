@@ -18,11 +18,11 @@
 
 @property(readonly) RTText*(^join)(id<RTText>);
 
-@property(readonly) RTText*(^style)(RTStyle*);
-@property(readonly) RTText*(^color)(UIColor*);
-@property(readonly) RTText*(^background)(UIColor*);
-@property(readonly) RTText*(^font)(UIFont*);
-@property(readonly) RTText*(^underline)(UIColor*);
+@property(readonly) RTText*(^setStyle)(RTStyle*);
+@property(readonly) RTText*(^setColor)(UIColor*);
+@property(readonly) RTText*(^setBackground)(UIColor*);
+@property(readonly) RTText*(^setFont)(UIFont*);
+@property(readonly) RTText*(^setUnderline)(UIColor*);
 
 @end
 

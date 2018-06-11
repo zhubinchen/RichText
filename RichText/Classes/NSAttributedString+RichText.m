@@ -21,11 +21,11 @@ _rt_imp2(range)
 
 #pragma mark Styleable
 
-_rt_imp1(color)
-_rt_imp1(font)
-_rt_imp1(background)
-_rt_imp1(style)
-_rt_imp1(underline)
+_rt_imp1(setColor)
+_rt_imp1(setFont)
+_rt_imp1(setBackground)
+_rt_imp1(setStyle)
+_rt_imp1(setUnderline)
 
 - (NSAttributedString *)attributedString {
     return self;

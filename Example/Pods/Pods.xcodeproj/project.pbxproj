@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0703EC6F202AA68B0028C35F /* UIButton+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703EC65202AA68B0028C35F /* UIButton+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0703EC70202AA68B0028C35F /* UIButton+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703EC66202AA68B0028C35F /* UIButton+RichText.m */; };
+		0703EC71202AA68B0028C35F /* UIFont+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703EC67202AA68B0028C35F /* UIFont+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0703EC72202AA68B0028C35F /* UIFont+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703EC68202AA68B0028C35F /* UIFont+RichText.m */; };
+		0703EC73202AA68B0028C35F /* UILabel+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703EC69202AA68B0028C35F /* UILabel+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0703EC74202AA68B0028C35F /* UILabel+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703EC6A202AA68B0028C35F /* UILabel+RichText.m */; };
+		0703EC75202AA68B0028C35F /* UITextField+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703EC6B202AA68B0028C35F /* UITextField+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0703EC76202AA68B0028C35F /* UITextField+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703EC6C202AA68B0028C35F /* UITextField+RichText.m */; };
+		0703EC77202AA68B0028C35F /* UITextView+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703EC6D202AA68B0028C35F /* UITextView+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0703EC78202AA68B0028C35F /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703EC6E202AA68B0028C35F /* UITextView+RichText.m */; };
 		072A28A32014C53400B3434A /* RTStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A288D2014C53200B3434A /* RTStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		072A28A42014C53400B3434A /* UIFont+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A288E2014C53200B3434A /* UIFont+RichText.m */; };
-		072A28A72014C53400B3434A /* UIFont+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28912014C53200B3434A /* UIFont+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28A82014C53400B3434A /* NSString+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28922014C53200B3434A /* NSString+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28A92014C53400B3434A /* RTProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28932014C53200B3434A /* RTProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28AA2014C53400B3434A /* NSAttributedString+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28942014C53200B3434A /* NSAttributedString+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,13 +25,11 @@
 		072A28AC2014C53400B3434A /* UIImage+RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28962014C53200B3434A /* UIImage+RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28AE2014C53400B3434A /* RTText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28982014C53200B3434A /* RTText.m */; };
 		072A28AF2014C53400B3434A /* UIImage+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28992014C53200B3434A /* UIImage+RichText.m */; };
-		072A28B02014C53400B3434A /* UIExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A289A2014C53300B3434A /* UIExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28B12014C53400B3434A /* RTPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A289B2014C53300B3434A /* RTPrivate.m */; };
 		072A28B22014C53400B3434A /* RTText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A289C2014C53300B3434A /* RTText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072A28B42014C53400B3434A /* NSAttributedString+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A289E2014C53300B3434A /* NSAttributedString+RichText.m */; };
 		072A28B52014C53400B3434A /* RTPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A289F2014C53300B3434A /* RTPrivate.h */; };
 		072A28B72014C53400B3434A /* RTStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28A12014C53300B3434A /* RTStyle.m */; };
-		072A28B82014C53400B3434A /* UIExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072A28A22014C53300B3434A /* UIExtensions.m */; };
 		072A28BA2014C56400B3434A /* RichText.h in Headers */ = {isa = PBXBuildFile; fileRef = 072A28B92014C54600B3434A /* RichText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E7E8DD085D73F28C2A52C19C9F0775F /* Pods-RichText_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EA67A1C152B18139D8C1D09737019 /* Pods-RichText_Example-dummy.m */; };
 		2011DD0FF5A9C0E4714C6572155E5E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -48,9 +54,17 @@
 
 /* Begin PBXFileReference section */
 		00046B355C720966A51FABB68E4941D3 /* Pods-RichText_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RichText_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0703EC65202AA68B0028C35F /* UIButton+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RichText.h"; sourceTree = "<group>"; };
+		0703EC66202AA68B0028C35F /* UIButton+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RichText.m"; sourceTree = "<group>"; };
+		0703EC67202AA68B0028C35F /* UIFont+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+RichText.h"; sourceTree = "<group>"; };
+		0703EC68202AA68B0028C35F /* UIFont+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+RichText.m"; sourceTree = "<group>"; };
+		0703EC69202AA68B0028C35F /* UILabel+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+RichText.h"; sourceTree = "<group>"; };
+		0703EC6A202AA68B0028C35F /* UILabel+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+RichText.m"; sourceTree = "<group>"; };
+		0703EC6B202AA68B0028C35F /* UITextField+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RichText.h"; sourceTree = "<group>"; };
+		0703EC6C202AA68B0028C35F /* UITextField+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RichText.m"; sourceTree = "<group>"; };
+		0703EC6D202AA68B0028C35F /* UITextView+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+RichText.h"; sourceTree = "<group>"; };
+		0703EC6E202AA68B0028C35F /* UITextView+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+RichText.m"; sourceTree = "<group>"; };
 		072A288D2014C53200B3434A /* RTStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTStyle.h; path = RichText/Classes/RTStyle.h; sourceTree = "<group>"; };
-		072A288E2014C53200B3434A /* UIFont+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+RichText.m"; path = "RichText/Classes/UIFont+RichText.m"; sourceTree = "<group>"; };
-		072A28912014C53200B3434A /* UIFont+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+RichText.h"; path = "RichText/Classes/UIFont+RichText.h"; sourceTree = "<group>"; };
 		072A28922014C53200B3434A /* NSString+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RichText.h"; path = "RichText/Classes/NSString+RichText.h"; sourceTree = "<group>"; };
 		072A28932014C53200B3434A /* RTProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTProtocols.h; path = RichText/Classes/RTProtocols.h; sourceTree = "<group>"; };
 		072A28942014C53200B3434A /* NSAttributedString+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+RichText.h"; path = "RichText/Classes/NSAttributedString+RichText.h"; sourceTree = "<group>"; };
@@ -58,13 +72,11 @@
 		072A28962014C53200B3434A /* UIImage+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RichText.h"; path = "RichText/Classes/UIImage+RichText.h"; sourceTree = "<group>"; };
 		072A28982014C53200B3434A /* RTText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTText.m; path = RichText/Classes/RTText.m; sourceTree = "<group>"; };
 		072A28992014C53200B3434A /* UIImage+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RichText.m"; path = "RichText/Classes/UIImage+RichText.m"; sourceTree = "<group>"; };
-		072A289A2014C53300B3434A /* UIExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIExtensions.h; path = RichText/Classes/UIExtensions.h; sourceTree = "<group>"; };
 		072A289B2014C53300B3434A /* RTPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPrivate.m; path = RichText/Classes/RTPrivate.m; sourceTree = "<group>"; };
 		072A289C2014C53300B3434A /* RTText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTText.h; path = RichText/Classes/RTText.h; sourceTree = "<group>"; };
 		072A289E2014C53300B3434A /* NSAttributedString+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+RichText.m"; path = "RichText/Classes/NSAttributedString+RichText.m"; sourceTree = "<group>"; };
 		072A289F2014C53300B3434A /* RTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPrivate.h; path = RichText/Classes/RTPrivate.h; sourceTree = "<group>"; };
 		072A28A12014C53300B3434A /* RTStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTStyle.m; path = RichText/Classes/RTStyle.m; sourceTree = "<group>"; };
-		072A28A22014C53300B3434A /* UIExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIExtensions.m; path = RichText/Classes/UIExtensions.m; sourceTree = "<group>"; };
 		072A28B92014C54600B3434A /* RichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RichText.h; sourceTree = "<group>"; };
 		0B5C4ED32F690C1E7B5F0BB3F8E48C70 /* Pods-RichText_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RichText_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C4FFB8B266D7BD51BBB261D90E879E1 /* Pods-RichText_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RichText_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -126,6 +138,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0703EC64202AA68B0028C35F /* UIKit+RichText */ = {
+			isa = PBXGroup;
+			children = (
+				0703EC65202AA68B0028C35F /* UIButton+RichText.h */,
+				0703EC66202AA68B0028C35F /* UIButton+RichText.m */,
+				0703EC67202AA68B0028C35F /* UIFont+RichText.h */,
+				0703EC68202AA68B0028C35F /* UIFont+RichText.m */,
+				0703EC69202AA68B0028C35F /* UILabel+RichText.h */,
+				0703EC6A202AA68B0028C35F /* UILabel+RichText.m */,
+				0703EC6B202AA68B0028C35F /* UITextField+RichText.h */,
+				0703EC6C202AA68B0028C35F /* UITextField+RichText.m */,
+				0703EC6D202AA68B0028C35F /* UITextView+RichText.h */,
+				0703EC6E202AA68B0028C35F /* UITextView+RichText.m */,
+			);
+			name = "UIKit+RichText";
+			path = "RichText/Classes/UIKit+RichText";
+			sourceTree = "<group>";
+		};
 		5651632C59D68E4E9D89C35AC6FC6888 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,23 +230,20 @@
 		A8D4C7D93EC6C2E550047BFE79AC0B76 /* RichText */ = {
 			isa = PBXGroup;
 			children = (
+				072A28932014C53200B3434A /* RTProtocols.h */,
 				072A289C2014C53300B3434A /* RTText.h */,
 				072A28982014C53200B3434A /* RTText.m */,
-				072A288D2014C53200B3434A /* RTStyle.h */,
-				072A28A12014C53300B3434A /* RTStyle.m */,
 				072A28922014C53200B3434A /* NSString+RichText.h */,
 				072A28952014C53200B3434A /* NSString+RichText.m */,
 				072A28942014C53200B3434A /* NSAttributedString+RichText.h */,
 				072A289E2014C53300B3434A /* NSAttributedString+RichText.m */,
 				072A28962014C53200B3434A /* UIImage+RichText.h */,
 				072A28992014C53200B3434A /* UIImage+RichText.m */,
-				072A28912014C53200B3434A /* UIFont+RichText.h */,
-				072A288E2014C53200B3434A /* UIFont+RichText.m */,
-				072A28932014C53200B3434A /* RTProtocols.h */,
-				072A289A2014C53300B3434A /* UIExtensions.h */,
-				072A28A22014C53300B3434A /* UIExtensions.m */,
+				072A288D2014C53200B3434A /* RTStyle.h */,
+				072A28A12014C53300B3434A /* RTStyle.m */,
 				072A289F2014C53300B3434A /* RTPrivate.h */,
 				072A289B2014C53300B3434A /* RTPrivate.m */,
+				0703EC64202AA68B0028C35F /* UIKit+RichText */,
 				6C2F294106DB6DC86C8096993BC88896 /* Support Files */,
 			);
 			name = RichText;
@@ -272,13 +299,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072A28A72014C53400B3434A /* UIFont+RichText.h in Headers */,
+				0703EC71202AA68B0028C35F /* UIFont+RichText.h in Headers */,
 				072A28AA2014C53400B3434A /* NSAttributedString+RichText.h in Headers */,
+				0703EC6F202AA68B0028C35F /* UIButton+RichText.h in Headers */,
 				072A28A82014C53400B3434A /* NSString+RichText.h in Headers */,
+				0703EC73202AA68B0028C35F /* UILabel+RichText.h in Headers */,
+				0703EC75202AA68B0028C35F /* UITextField+RichText.h in Headers */,
 				072A28A32014C53400B3434A /* RTStyle.h in Headers */,
+				0703EC77202AA68B0028C35F /* UITextView+RichText.h in Headers */,
 				384E8C6706BA6E8D46DA780F615FF1C3 /* RichText-umbrella.h in Headers */,
 				072A28A92014C53400B3434A /* RTProtocols.h in Headers */,
-				072A28B02014C53400B3434A /* UIExtensions.h in Headers */,
 				072A28B52014C53400B3434A /* RTPrivate.h in Headers */,
 				072A28B22014C53400B3434A /* RTText.h in Headers */,
 				072A28AC2014C53400B3434A /* UIImage+RichText.h in Headers */,
@@ -383,14 +413,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				072A28AF2014C53400B3434A /* UIImage+RichText.m in Sources */,
+				0703EC74202AA68B0028C35F /* UILabel+RichText.m in Sources */,
 				BCB1E2978180896015B75939C6750771 /* RichText-dummy.m in Sources */,
 				072A28B72014C53400B3434A /* RTStyle.m in Sources */,
 				072A28AB2014C53400B3434A /* NSString+RichText.m in Sources */,
-				072A28A42014C53400B3434A /* UIFont+RichText.m in Sources */,
-				072A28B82014C53400B3434A /* UIExtensions.m in Sources */,
+				0703EC72202AA68B0028C35F /* UIFont+RichText.m in Sources */,
 				072A28AE2014C53400B3434A /* RTText.m in Sources */,
 				072A28B42014C53400B3434A /* NSAttributedString+RichText.m in Sources */,
+				0703EC78202AA68B0028C35F /* UITextView+RichText.m in Sources */,
+				0703EC70202AA68B0028C35F /* UIButton+RichText.m in Sources */,
 				072A28B12014C53400B3434A /* RTPrivate.m in Sources */,
+				0703EC76202AA68B0028C35F /* UITextField+RichText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
