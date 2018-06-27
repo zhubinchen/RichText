@@ -35,6 +35,16 @@
     return self;
 }
 
+- (instancetype)initWithHtml:(NSString *)htmlStr {
+    if (self = [super init]) {
+        NSDictionary *options = @{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType};
+        NSData *data = [(htmlStr ?: @"") dataUsingEncoding:NSUnicodeStringEncoding];
+        _attributedString = [[NSMutableAttributedString alloc] initWithData:data options:options documentAttributes:nil error:nil];
+        self.ranges = @[r(0, self.length)];
+    }
+    return self;
+}
+
 - (NSAttributedString *)attributedString {
     return [_attributedString copy];
 }
@@ -154,7 +164,7 @@
     self.ranges = @[r(0, self.length)];
 }
 
-- (void)replaceTextMatchedPattern:(NSString *)pattern withParser:(Parser)parser {
+- (void)replaceTextMatchedPattern:(NSString *)pattern withParser:(RTParser)parser {
     NSString *str = _attributedString.string;
     if (parser == nil) {
         return;

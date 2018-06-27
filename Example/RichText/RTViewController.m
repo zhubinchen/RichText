@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *label3;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
@@ -20,70 +21,75 @@
 
 @implementation RTViewController
 {
-    RTStyle *style;
-}
-
-- (NSString *)pattern {
-    return @"\\[.+?\\]";
-}
-
-- (id<RTText>)parse:(NSString *)text {
-    NSArray *arr = [text componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[(,)]"]];
-    return [UIImage imageNamed:arr[1]].withSize([arr[2] intValue], [arr[3] intValue]);
+    RTStyle *style1;
+    RTStyle *style2;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    style = [RTStyle create:^(RTStyle *style) {
+    self.title = @"RichText Samples";
+    
+    style1 = [RTStyle create:^(RTStyle *style) {
         style.font = [UIFont boldSystemFontOfSize:18];
         style.color = [UIColor darkGrayColor];
     }];
     
+    style2 = [RTStyle create:^(RTStyle *style) {
+        style.font = [UIFont systemFontOfSize:16];
+        style.color = [UIColor blueColor];
+        style.underline = UIColor.purpleColor;
+    }];
+    
     [self setupLabel1];
     [self setupLabel2];
+    [self setupLabel3];
     [self setupButton];
     [self setupTextView];
 }
 
 - (void)setupLabel1 {
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowOffset = CGSizeMake(1, 1);
-    shadow.shadowColor = UIColor.blueColor;
+    shadow.shadowOffset = CGSizeMake(0, 3);
+    shadow.shadowColor = UIColor.orangeColor;
     shadow.shadowBlurRadius = 2;
-    
+
     self.label1.richText = @"RichText"
-    .setStyle(style) // 整体设置style
-    .setStrokeColor(UIColor.greenColor) // 描边颜色
-    .setStrokeWidth(-3) // 描边宽度
+    .setColor(UIColor.magentaColor) //设置颜色
+    .setFont([UIFont boldSystemFontOfSize:30]) // 设置字体
+    .setStrokeColor(UIColor.blueColor) // 设置描边颜色
+    .setStrokeWidth(-3) // 设置描边宽度
     .setShadow(shadow) // 设置阴影
-    .setObliqueness(0.5) // 倾斜度0.5
-    .setUnderline(UIColor.purpleColor)
+    .setObliqueness(0.4) // 设置倾斜度0.4
     .range(0,4) // 选中范围
-    .setColor(UIColor.redColor) // 0~4设为红色
+    .setColor(UIColor.orangeColor) // 0~4设为红色
     .matches(@"R") // 匹配指定范围
-    .setExpansion(1.2) // 拉伸1.2倍
-    .setFont([UIFont boldSystemFontOfSize:24]); // 给“R”设置字体
+    .setExpansion(0.5) // 拉伸或压缩
+    .setFont([UIFont boldSystemFontOfSize:50]);
 }
 
 - (void)setupLabel2 {
     UIImage *image = [UIImage imageNamed:@"smile"];
-    self.label2.richText = rt(@"人生真是",image,@"寂寞如雪啊",nil).setStyle(style);
+    self.label2.richText = @"Join text to".join(image).join(@"image!").setStyle(style2);
+}
+
+- (void)setupLabel3 {
+    RTText *html = [[RTText alloc] initWithHtml:@"<h1>Init with HTML</h1> <p style=\"font-family:verdana;color:red\"> This text is in Verdana and red</p><p style=\"font-family:times;color:green\">This text is in Times and green</p>"];
+    self.label3.richText = html;
 }
 
 - (void)setupButton {
-    // 直接设置richText
-    [self.button setRichText:@"我是一只鱼".setColor(UIColor.redColor) forState:UIControlStateHighlighted];
-    
     // 设置style后，每次setTitle都会应用对应的style
-    [self.button setStyle:style forState:UIControlStateNormal];
-    [self.button setTitle:@"我是一只鱼" forState:UIControlStateNormal];
+    [self.button setStyle:style1 forState:UIControlStateNormal];
+    [self.button setStyle:style2 forState:UIControlStateHighlighted];
+    [self.button setTitle:@"Style for UIControlStateNormal" forState:UIControlStateNormal];
+    [self.button setTitle:@"Style for UIControlStateHighlighted" forState:UIControlStateHighlighted];
 }
 
 - (void)setupTextView {
-    self.textView.style = style;
-    self.textView.text = @"textView also support style configure";
+    self.textView.style = style2;
+    self.textView.text = @"TextView also support style configure, try input here...";
 }
 
 @end
