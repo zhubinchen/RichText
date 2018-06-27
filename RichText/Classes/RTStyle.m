@@ -7,6 +7,13 @@
 
 #import "RTStyle.h"
 
+#define AssignProperty(name) self.paragraphStyle.name = self.name
+
+@interface RTStyle()
+@property (nonatomic,strong) NSShadow                            *shadow;
+@property (nonatomic,strong) NSMutableParagraphStyle             *paragraphStyle;
+@end
+
 @implementation RTStyle
 
 + (instancetype)create:(void (^)(RTStyle *))maker {
@@ -15,25 +22,72 @@
     return style;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    }
+    return self;
+}
+
 - (NSDictionary *)attributes {
     
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     if (_font) {
-        [attrs setObject:_font forKey:NSFontAttributeName];
+        attrs[NSFontAttributeName] = _font;
     }
     if (_color) {
-        [attrs setObject:_color forKey:NSForegroundColorAttributeName];
+        attrs[NSForegroundColorAttributeName] = _color;
     }
-    if (_background) {
-        [attrs setObject:_background forKey:NSBackgroundColorAttributeName];
+    if (_backgroundColor) {
+        attrs[NSBackgroundColorAttributeName] = _backgroundColor;
     }
-    if (_underline) {
-        [attrs setObject:@(NSUnderlineStyleSingle) forKey:NSUnderlineStyleAttributeName];
-        [attrs setObject:_underline forKey:NSUnderlineColorAttributeName];
+    if (_underlineColor) {
+        attrs[NSUnderlineStyleAttributeName] = @(NSUnderlineStyleSingle);
+        attrs[NSUnderlineColorAttributeName] = _underlineColor;
     }
-//    if (_paragraphStyle) {
-//        [attrs setObject:_paragraphStyle forKey:NSParagraphStyleAttributeName];
-//    }
+    if (self.shadowColor) {
+        self.shadow = [[NSShadow alloc] init];
+        self.shadow.shadowColor = self.shadowColor;
+    } else {
+        self.shadow = nil;
+    }
+    if (!CGSizeEqualToSize(self.shadowOffset, CGSizeZero)) {
+        self.shadow.shadowOffset = self.shadowOffset;
+    }
+    if (self.shadowBlurRadius) {
+        self.shadow.shadowBlurRadius = self.shadowBlurRadius;
+    }
+    if (self.shadow) {
+        attrs[NSShadowAttributeName] = self.shadow;
+    }
+    if (self.kern) {
+        attrs[NSKernAttributeName] = @(self.kern);
+    }
+    if (self.expansion) {
+        attrs[NSExpansionAttributeName] = @(self.expansion);
+    }
+    if (self.strokeColor) {
+        attrs[NSStrokeColorAttributeName] = self.strokeColor;
+    }
+    if (self.strokeWidth) {
+        attrs[NSStrokeWidthAttributeName] = @(self.strokeWidth);
+    }
+    if (self.obliqueness) {
+        attrs[NSObliquenessAttributeName] = @(self.obliqueness);
+    }
+    AssignProperty(lineSpacing);
+    AssignProperty(firstLineHeadIndent);
+    AssignProperty(alignment);
+    AssignProperty(lineBreakMode);
+    AssignProperty(headIndent);
+    AssignProperty(tailIndent);
+    AssignProperty(minimumLineHeight);
+    AssignProperty(maximumLineHeight);
+    AssignProperty(paragraphSpacing);
+    AssignProperty(paragraphSpacingBefore);
+    AssignProperty(lineHeightMultiple);
+    AssignProperty(hyphenationFactor);
+    attrs[NSParagraphStyleAttributeName] = self.paragraphStyle;
     return attrs;
 }
 
