@@ -11,7 +11,7 @@
 
 typedef id<RTText>(^Parser)(NSString* string);
 
-@interface RTText: NSObject<RTText, RTRangeable>
+@interface RTText: NSObject<RTText, RTRangeable,RTStyleable>
 
 - (instancetype)initWithText:(id<RTText> )text;
 

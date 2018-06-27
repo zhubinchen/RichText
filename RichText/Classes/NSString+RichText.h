@@ -8,6 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "RTText.h"
 
-@interface NSString(RichText) <RTText,RTRangeable>
+@interface NSString(RichText) <RTText,RTRangeable,RTStyleable>
 
 @end

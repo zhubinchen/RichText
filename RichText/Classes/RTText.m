@@ -36,7 +36,7 @@
 }
 
 - (NSAttributedString *)attributedString {
-    return _attributedString;
+    return [_attributedString copy];
 }
 
 - (RTText *(^)(NSInteger, NSInteger))range {
@@ -81,9 +81,42 @@
     };
 }
 
-- (RTText *(^)(UIColor *))setBackground {
+- (RTText *(^)(UIColor *))setBackgroundColor {
     return ^(UIColor *color) {
         return [self addAttributes:@{NSBackgroundColorAttributeName:color}];
+    };
+}
+
+- (RTText *(^)(UIColor *))setStrokeColor {
+    return ^(UIColor *color) {
+        return [self addAttributes:@{NSStrokeColorAttributeName:color}];
+    };
+}
+
+- (RTText *(^)(CGFloat))setStrokeWidth {
+    return ^(CGFloat width) {
+        return [self addAttributes:@{NSStrokeWidthAttributeName:@(width)}];
+    };
+}
+
+- (RTText *(^)(NSShadow *))setShadow {
+    return ^(NSShadow *shadow) {
+        return [self addAttributes:@{
+                                     NSShadowAttributeName:shadow,
+                                     NSVerticalGlyphFormAttributeName:@0
+                                     }];
+    };
+}
+
+- (RTText *(^)(CGFloat))setObliqueness {
+    return ^(CGFloat obliqueness) {
+        return [self addAttributes:@{NSObliquenessAttributeName:@(obliqueness)}];
+    };
+}
+
+- (RTText *(^)(CGFloat))setExpansion {
+    return ^(CGFloat expansion) {
+        return [self addAttributes:@{NSExpansionAttributeName:@(expansion)}];
     };
 }
 
@@ -144,7 +177,6 @@
 - (NSUInteger)length {
     return self.attributedString.length;
 }
-
 
 @end
 

@@ -12,26 +12,29 @@
 @class RTStyle;
 
 @protocol RTText
-
 @property(readonly) NSAttributedString *attributedString;
 @property(readonly) NSUInteger length;
-
 @property(readonly) RTText*(^join)(id<RTText>);
-
-@property(readonly) RTText*(^setStyle)(RTStyle*);
-@property(readonly) RTText*(^setColor)(UIColor*);
-@property(readonly) RTText*(^setBackground)(UIColor*);
-@property(readonly) RTText*(^setFont)(UIFont*);
-@property(readonly) RTText*(^setUnderline)(UIColor*);
-
 @end
 
-@protocol RTRangeable
+@protocol RTStyleable
+@property(readonly) RTText*(^setStyle)(RTStyle* style);
+@property(readonly) RTText*(^setColor)(UIColor* color);
+@property(readonly) RTText*(^setBackgroundColor)(UIColor* color);
+@property(readonly) RTText*(^setStrokeColor)(UIColor* color);
+@property(readonly) RTText*(^setStrokeWidth)(CGFloat width);
+@property(readonly) RTText*(^setFont)(UIFont* font);
+@property(readonly) RTText*(^setUnderline)(UIColor* color);
+@property(readonly) RTText*(^setShadow)(NSShadow* shadow);
+@property(readonly) RTText*(^setObliqueness)(CGFloat obliqueness);
+@property(readonly) RTText*(^setExpansion)(CGFloat expansion);
+@end
 
+// 选择一个范围设置attributes
+@protocol RTRangeable
 @property(readonly) RTText*(^range)(NSInteger,NSInteger); // 指定范围
 @property(readonly) RTText*(^matches)(NSString*); // 匹配正则的范围
 @property(readonly) RTText*(^whole)(); // 全部范围
-
 @end
 
 

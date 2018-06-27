@@ -14,14 +14,6 @@
 _rt_imp
 _rt_imp1(join)
 
-#pragma mark Styleable
-
-_rt_imp1(setColor)
-_rt_imp1(setFont)
-_rt_imp1(setBackground)
-_rt_imp1(setStyle)
-_rt_imp1(setUnderline)
-
 -(NSUInteger)length {
     return 1;
 }

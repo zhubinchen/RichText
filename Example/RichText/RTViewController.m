@@ -37,9 +37,8 @@
     [super viewDidLoad];
     
     style = [RTStyle create:^(RTStyle *style) {
-        style.font = [UIFont systemFontOfSize:16];
+        style.font = [UIFont boldSystemFontOfSize:18];
         style.color = [UIColor darkGrayColor];
-        style.underline = [UIColor darkGrayColor];
     }];
     
     [self setupLabel1];
@@ -49,10 +48,23 @@
 }
 
 - (void)setupLabel1 {
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowOffset = CGSizeMake(1, 1);
+    shadow.shadowColor = UIColor.blueColor;
+    shadow.shadowBlurRadius = 2;
+    
     self.label1.richText = @"RichText"
     .setStyle(style) // 整体设置style
-    .range(0,4).setColor(UIColor.redColor) // 0~4设为红色
-    .matches(@"R").setFont([UIFont boldSystemFontOfSize:24]); // 给“R”设置字体
+    .setStrokeColor(UIColor.greenColor) // 描边颜色
+    .setStrokeWidth(-3) // 描边宽度
+    .setShadow(shadow) // 设置阴影
+    .setObliqueness(0.5) // 倾斜度0.5
+    .setUnderline(UIColor.purpleColor)
+    .range(0,4) // 选中范围
+    .setColor(UIColor.redColor) // 0~4设为红色
+    .matches(@"R") // 匹配指定范围
+    .setExpansion(1.2) // 拉伸1.2倍
+    .setFont([UIFont boldSystemFontOfSize:24]); // 给“R”设置字体
 }
 
 - (void)setupLabel2 {
@@ -73,20 +85,5 @@
     self.textView.style = style;
     self.textView.text = @"textView also support style configure";
 }
-
-//- (void)textViewDidChange:(UITextView *)textView {
-//    NSRange range = textView.selectedRange;
-//    RTText *richText = [[RTText alloc] initWithText:textView.richText];
-//    richText.style(style);
-//    [richText replaceTextMatchedPattern:@"\\[.+?\\]" withParser:^id<RTText>(NSString *string) {
-//        NSArray *arr = [string componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[]"]];
-//        if (arr.count > 2) {
-//            return [UIImage imageNamed:arr[1]];
-//        }
-//        return nil;
-//    }];
-//    textView.richText = richText;
-//    textView.selectedRange = range;
-//}
 
 @end
