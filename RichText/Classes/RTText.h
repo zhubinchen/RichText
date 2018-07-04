@@ -13,9 +13,21 @@ typedef id<RTText>(^RTParser)(NSString* string);
 
 @interface RTText: NSObject<RTText, RTRangeable,RTStyleable>
 
-- (instancetype)initWithText:(id<RTText> )text;
+- (instancetype)initWithText:(id<RTText>)text;
 
-- (instancetype)initWithHtml:(NSString*)htmlStr;
+- (instancetype)initWithHTML:(NSString*)htmlStr;
+
+- (RTText *)subtextToIndex:(NSUInteger)to;
+
+- (RTText *)subtextFromIndex:(NSUInteger)from;
+
+- (RTText *)subtextWithRange:(NSRange)range;
+
+- (void)deleteCharactersInRange:(NSRange)range;
+
+- (void)insertText:(id<RTText>)text atIndex:(NSUInteger)loc;
+
+- (void)appendText:(id<RTText>)text;
 
 - (void)replaceTextInRange:(NSRange)range withText:(id<RTText>)text;
 
