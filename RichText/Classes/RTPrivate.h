@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSAttributedString+RichText.h"
+#import "NSString+RichText.h"
 
 static inline NSValue* r(NSUInteger loc, NSUInteger len) {
     return [NSValue valueWithRange:NSMakeRange(loc, len)];

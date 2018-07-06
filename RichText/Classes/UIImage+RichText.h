@@ -10,6 +10,7 @@
 
 @interface UIImage(RichText) <RTText>
 
-@property(readonly) UIImage*(^withSize)(CGFloat,CGFloat);
+// 调整大小 image.withSize(20,20);
+@property(readonly) UIImage*(^withSize)(CGFloat w,CGFloat h);
 
 @end

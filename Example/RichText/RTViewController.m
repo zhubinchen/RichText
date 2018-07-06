@@ -45,7 +45,7 @@
         style.firstLineHeadIndent = 20;
         style.paragraphSpacingBefore = 40;
     }];
-    
+
     [self setupLabel1];
     [self setupLabel2];
     [self setupLabel3];
