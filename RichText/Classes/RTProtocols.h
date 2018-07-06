@@ -28,6 +28,7 @@
 @property(readonly) RTText*(^setShadow)(NSShadow* shadow);
 @property(readonly) RTText*(^setObliqueness)(CGFloat obliqueness);
 @property(readonly) RTText*(^setExpansion)(CGFloat expansion);
+@property(readonly) RTText*(^setKern)(CGFloat kern);
 @end
 
 // 选择一个范围设置attributes
@@ -50,6 +51,12 @@ return self._rt.func();\
 
 #define _rt_imp1(func) - (RTText *(^)(id))func { \
 return ^(id prama) { \
+return self._rt.func(prama);\
+};\
+}
+
+#define _rt_imp1_f(func) - (RTText *(^)(CGFloat))func { \
+return ^(CGFloat prama) { \
 return self._rt.func(prama);\
 };\
 }

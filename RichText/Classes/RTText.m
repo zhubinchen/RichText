@@ -109,6 +109,12 @@
     };
 }
 
+- (RTText *(^)(CGFloat))setKern {
+    return ^(CGFloat kern) {
+        return [self addAttributes:@{NSKernAttributeName:@(kern)}];
+    };
+}
+
 - (RTText *(^)(NSShadow *))setShadow {
     return ^(NSShadow *shadow) {
         return [self addAttributes:@{

@@ -58,8 +58,9 @@
     shadow.shadowOffset = CGSizeMake(0, 3);
     shadow.shadowColor = UIColor.orangeColor;
     shadow.shadowBlurRadius = 2;
-
+    
     self.label1.richText = @"RichText"
+    .setKern(5) //设置字间距
     .setColor(UIColor.magentaColor) //设置颜色
     .setFont([UIFont boldSystemFontOfSize:30]) // 设置字体
     .setStrokeColor(UIColor.blueColor) // 设置描边颜色

@@ -29,24 +29,10 @@ _rt_imp1(setStyle)
 _rt_imp1(setUnderline)
 _rt_imp1(setStrokeColor)
 _rt_imp1(setShadow)
-
-- (RTText *(^)(CGFloat))setStrokeWidth {
-    return ^(CGFloat width) {
-        return self._rt.setStrokeWidth(width);
-    };
-}
-
-- (RTText *(^)(CGFloat))setExpansion {
-    return ^(CGFloat width) {
-        return self._rt.setExpansion(width);
-    };
-}
-
-- (RTText *(^)(CGFloat))setObliqueness {
-    return ^(CGFloat width) {
-        return self._rt.setObliqueness(width);
-    };
-}
+_rt_imp1_f(setStrokeWidth)
+_rt_imp1_f(setExpansion)
+_rt_imp1_f(setObliqueness)
+_rt_imp1_f(setKern)
 
 - (NSAttributedString *)attributedString {
     return [[NSAttributedString alloc] initWithString:self];
