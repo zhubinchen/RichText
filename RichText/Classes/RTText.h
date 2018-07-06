@@ -11,10 +11,13 @@
 
 typedef id<RTText>(^RTParser)(NSString* string);
 
-@interface RTText: NSObject<RTText, RTRangeable,RTStyleable>
+@interface RTText: NSObject<RTText, RTRangeable, RTStyleable>
+
+- (instancetype)initWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 
 - (instancetype)initWithText:(id<RTText>)text;
 
+// HTML 转成RTText，效率较低，复杂的HTML可能耗时很长
 - (instancetype)initWithHTML:(NSString*)htmlStr;
 
 - (RTText *)subtextToIndex:(NSUInteger)to;
@@ -31,10 +34,8 @@ typedef id<RTText>(^RTParser)(NSString* string);
 
 - (void)replaceTextInRange:(NSRange)range withText:(id<RTText>)text;
 
+// 每次匹配到pattern时，都会调用parser，调用参数是匹配的内容，并用parser的返回值替换匹配到的内容
 - (void)replaceTextMatchedPattern:(NSString*)pattern withParser:(RTParser)parser;
 
 @end
-
-extern RTText *rt(id<RTText> text, ...);
-
 

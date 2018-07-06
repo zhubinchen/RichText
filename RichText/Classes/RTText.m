@@ -45,6 +45,14 @@
     return self;
 }
 
+- (instancetype)initWithFormat:(NSString *)format, ... {
+    va_list texts;
+    va_start(texts, format);
+    NSString *str = [[NSString alloc] initWithFormat:format arguments:texts];
+    va_end(texts);
+    return [self initWithText:str];
+}
+
 - (NSAttributedString *)attributedString {
     return [_attributedString copy];
 }
@@ -224,14 +232,3 @@
 }
 
 @end
-
-RTText *rt(id<RTText> text, ...) {
-    va_list texts;
-    va_start(texts, text);
-    RTText *ret = [[RTText alloc] initWithText:text];
-    while ((text = va_arg(texts, id<RTText>))) {
-        ret.join(text);
-    }
-    va_end(texts);
-    return ret;
-}
