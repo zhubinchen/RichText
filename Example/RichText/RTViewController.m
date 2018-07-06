@@ -67,8 +67,8 @@
     .setStrokeWidth(-3) // 设置描边宽度
     .setShadow(shadow) // 设置阴影
     .setObliqueness(0.4) // 设置倾斜度0.4
-    .range(0,4) // 选中范围
-    .setColor(UIColor.orangeColor) // 0~4设为红色
+    .rangeTo(4) // 选中范围
+    .setColor(UIColor.orangeColor) // 给前4个设置颜色
     .matches(@"R") // 匹配指定范围
     .setExpansion(0.5) // 拉伸或压缩
     .setFont([UIFont boldSystemFontOfSize:50]);

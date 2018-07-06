@@ -79,6 +79,20 @@
     };
 }
 
+- (RTText *(^)(NSInteger))rangeTo {
+    return ^(NSInteger to) {
+        self.ranges= @[r(0, to)];
+        return self;
+    };
+}
+
+- (RTText *(^)(NSInteger))rangeFrom {
+    return ^(NSInteger from) {
+        self.ranges= @[r(from, self.length - from)];
+        return self;
+    };
+}
+
 - (RTText *(^)())whole {
     return ^() {
         return self.range(0,self.length);

@@ -14,7 +14,7 @@
 @protocol RTText
 @property (readonly) NSAttributedString *attributedString; // 可以通过这个把RTText转成NSAttributedString
 @property (readonly) NSUInteger length; // 长度，UIImage为1
-@property (readonly) RTText*(^join)(id<RTText>); // 拼接，拼接后重置操作范围
+@property (readonly) RTText*(^join)(id<RTText> aText); // 拼接，拼接后重置操作范围
 @end
 
 @protocol RTStyleable
@@ -33,7 +33,9 @@
 
 @protocol RTRangeable
 @property (readonly) RTText*(^range)(NSInteger loc,NSInteger len); // 改变范围到NSMakeRange(loc,len)
-@property (readonly) RTText*(^matches)(NSString*); // 匹配正则的范围
+@property (readonly) RTText*(^rangeTo)(NSInteger to); // 改变范围到NSMakeRange(0,to)
+@property (readonly) RTText*(^rangeFrom)(NSInteger from); // 改变范围到NSMakeRange(from,len - from)
+@property (readonly) RTText*(^matches)(NSString *pattern); // 匹配正则的范围
 @property (readonly) RTText*(^whole)(); // 全部范围
 @end
 
@@ -56,6 +58,12 @@ return self._rt.func(prama);\
 
 #define _rt_imp1_f(func) - (RTText *(^)(CGFloat))func { \
 return ^(CGFloat prama) { \
+return self._rt.func(prama);\
+};\
+}
+
+#define _rt_imp1_i(func) - (RTText *(^)(NSInteger))func { \
+return ^(NSInteger prama) { \
 return self._rt.func(prama);\
 };\
 }

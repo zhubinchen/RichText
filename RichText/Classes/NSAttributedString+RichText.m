@@ -18,6 +18,8 @@ _rt_imp1(join)
 _rt_imp0(whole)
 _rt_imp1(matches)
 _rt_imp2(range)
+_rt_imp1_i(rangeTo)
+_rt_imp1_i(rangeFrom)
 
 #pragma mark Styleable
 
