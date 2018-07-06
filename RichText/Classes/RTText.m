@@ -53,9 +53,24 @@
     return [self initWithText:str];
 }
 
+#pragma mark RTText implements
+
 - (NSAttributedString *)attributedString {
     return [_attributedString copy];
 }
+
+- (NSUInteger)length {
+    return self.attributedString.length;
+}
+
+- (RTText *(^)(id<RTText>))join {
+    return ^(id<RTText> text) {
+        [self appendText:text];
+        return self;
+    };
+}
+
+#pragma mark RTRangeable implements
 
 - (RTText *(^)(NSInteger, NSInteger))range {
     return ^(NSInteger loc, NSInteger len) {
@@ -80,6 +95,8 @@
         return self;
     };
 }
+
+#pragma mark RTStyleable implements
 
 - (RTText *(^)(RTStyle *))setStyle {
     return ^(RTStyle *style) {
@@ -165,11 +182,38 @@
     return self;
 }
 
-- (RTText *(^)(id<RTText>))join {
-    return ^(id<RTText> text) {
-        [self appendText:text];
-        return self;
-    };
+#pragma mark subtext
+
+- (RTText *)subtextToIndex:(NSUInteger)to {
+    NSRange range = NSMakeRange(0, to);
+    return [self subtextWithRange:range];
+}
+
+- (RTText *)subtextFromIndex:(NSUInteger)from {
+    NSRange range = NSMakeRange(from, 0);
+    return [self subtextWithRange:range];
+}
+
+- (RTText *)subtextWithRange:(NSRange)range {
+    NSAttributedString *attrStr = [_attributedString attributedSubstringFromRange:range];
+    return [[RTText alloc] initWithText:attrStr];
+}
+
+#pragma mark delete & insert & replace
+
+- (void)deleteCharactersInRange:(NSRange)range {
+    [_attributedString deleteCharactersInRange:range];
+    self.ranges = @[r(0, self.length)];
+}
+
+- (void)insertText:(id<RTText>)text atIndex:(NSUInteger)loc {
+    [_attributedString insertAttributedString:text.attributedString atIndex:loc];
+    self.ranges = @[r(0, self.length)];
+}
+
+- (void)appendText:(id<RTText>)text {
+    [_attributedString appendAttributedString:text.attributedString];
+    self.ranges = @[r(0, self.length)];
 }
 
 - (void)replaceTextInRange:(NSRange)range withText:(id<RTText>)text {
@@ -195,40 +239,6 @@
             offset += range.length - rt.length;
         }
     }];
-}
-
-- (RTText *)subtextToIndex:(NSUInteger)to {
-    NSRange range = NSMakeRange(0, to);
-    return [self subtextWithRange:range];
-}
-
-- (RTText *)subtextFromIndex:(NSUInteger)from {
-    NSRange range = NSMakeRange(from, 0);
-    return [self subtextWithRange:range];
-}
-
-- (RTText *)subtextWithRange:(NSRange)range {
-    NSAttributedString *attrStr = [_attributedString attributedSubstringFromRange:range];
-    return [[RTText alloc] initWithText:attrStr];
-}
-
-- (void)deleteCharactersInRange:(NSRange)range {
-    [_attributedString deleteCharactersInRange:range];
-    self.ranges = @[r(0, self.length)];
-}
-
-- (void)insertText:(id<RTText>)text atIndex:(NSUInteger)loc {
-    [_attributedString insertAttributedString:text.attributedString atIndex:loc];
-    self.ranges = @[r(0, self.length)];
-}
-
-- (void)appendText:(id<RTText>)text {
-    [_attributedString appendAttributedString:text.attributedString];
-    self.ranges = @[r(0, self.length)];
-}
-
-- (NSUInteger)length {
-    return self.attributedString.length;
 }
 
 @end

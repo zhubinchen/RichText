@@ -143,14 +143,14 @@
 			children = (
 				0703EC65202AA68B0028C35F /* UIButton+RichText.h */,
 				0703EC66202AA68B0028C35F /* UIButton+RichText.m */,
-				0703EC67202AA68B0028C35F /* UIFont+RichText.h */,
-				0703EC68202AA68B0028C35F /* UIFont+RichText.m */,
 				0703EC69202AA68B0028C35F /* UILabel+RichText.h */,
 				0703EC6A202AA68B0028C35F /* UILabel+RichText.m */,
 				0703EC6B202AA68B0028C35F /* UITextField+RichText.h */,
 				0703EC6C202AA68B0028C35F /* UITextField+RichText.m */,
 				0703EC6D202AA68B0028C35F /* UITextView+RichText.h */,
 				0703EC6E202AA68B0028C35F /* UITextView+RichText.m */,
+				0703EC67202AA68B0028C35F /* UIFont+RichText.h */,
+				0703EC68202AA68B0028C35F /* UIFont+RichText.m */,
 			);
 			name = "UIKit+RichText";
 			path = "RichText/Classes/UIKit+RichText";
