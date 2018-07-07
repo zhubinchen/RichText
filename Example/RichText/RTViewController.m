@@ -58,9 +58,9 @@
     shadow.shadowOffset = CGSizeMake(0, 3);
     shadow.shadowColor = UIColor.orangeColor;
     shadow.shadowBlurRadius = 2;
-    
+
     self.label1.richText = @"RichText"
-    .setKern(5) //设置字间距
+    .setKern(1) //设置字间距
     .setColor(UIColor.magentaColor) //设置颜色
     .setFont([UIFont boldSystemFontOfSize:30]) // 设置字体
     .setStrokeColor(UIColor.blueColor) // 设置描边颜色
@@ -75,7 +75,7 @@
 }
 
 - (void)setupLabel2 {
-    UIImage *image = [UIImage imageNamed:@"smile"];
+    UIImage *image = [UIImage imageNamed:@"smile"].withSize(80,80);
     self.label2.richText = @"Join text to".join(image).join(@"image!").setStyle(style2);
 }
 

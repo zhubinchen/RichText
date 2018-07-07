@@ -53,6 +53,10 @@
     return [self initWithText:str];
 }
 
+- (NSArray<NSValue *> *)selectedRanges {
+    return self.ranges;
+}
+
 #pragma mark RTText implements
 
 - (NSAttributedString *)attributedString {
@@ -89,6 +93,20 @@
 - (RTText *(^)(NSInteger))rangeFrom {
     return ^(NSInteger from) {
         self.ranges= @[r(from, self.length - from)];
+        return self;
+    };
+}
+
+- (RTText *(^)(NSInteger))first {
+    return ^(NSInteger cnt) {
+        self.ranges= @[r(0, cnt)];
+        return self;
+    };
+}
+
+- (RTText *(^)(NSInteger))last {
+    return ^(NSInteger cnt) {
+        self.ranges= @[r(self.length - cnt, cnt)];
         return self;
     };
 }

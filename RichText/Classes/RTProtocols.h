@@ -35,6 +35,9 @@
 @property (readonly) RTText*(^range)(NSInteger loc,NSInteger len); // 改变范围到NSMakeRange(loc,len)
 @property (readonly) RTText*(^rangeTo)(NSInteger to); // 改变范围到NSMakeRange(0,to)
 @property (readonly) RTText*(^rangeFrom)(NSInteger from); // 改变范围到NSMakeRange(from,len - from)
+@property (readonly) RTText*(^first)(NSInteger count); // first(3) 前三个
+@property (readonly) RTText*(^last)(NSInteger count); // last(2) 后两个
+
 @property (readonly) RTText*(^matches)(NSString *pattern); // 匹配正则的范围
 @property (readonly) RTText*(^whole)(); // 全部范围
 @end
