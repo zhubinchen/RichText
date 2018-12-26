@@ -80,8 +80,8 @@
 }
 
 - (void)setupLabel3 {
-    RTText *html = [[RTText alloc] initWithHTML:@"<h1>Init with HTML</h1> <p style=\"font-family:verdana;color:red\"> This text is in Verdana and red</p><p style=\"font-family:times;color:green\">This text is in Times and green</p>"];
-    self.label3.richText = html;
+//    RTText *html = [[RTText alloc] initWithHTML:@"<h1>Init with HTML</h1> <p style=\"font-family:verdana;color:red\"> This text is in Verdana and red</p><p style=\"font-family:times;color:green\">This text is in Times and green</p>"];
+//    self.label3.richText = html;
 }
 
 - (void)setupButton {

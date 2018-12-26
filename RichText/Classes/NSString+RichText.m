@@ -7,7 +7,7 @@
 
 #import "NSString+RichText.h"
 #import "RTText.h"
-#import "RTPrivate.h"
+#import "RTDefines.h"
 
 @implementation NSString(RichText)
 

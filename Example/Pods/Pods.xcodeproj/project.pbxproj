@@ -37,6 +37,7 @@
 		40EF07F406648C2A5CE4A140F53B4747 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		55213D619B69CA0E4D004507D30E4623 /* Pods-RichText_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE67CB53652D589AC502F858DA81B4BA /* Pods-RichText_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		569D4442B1FCAEB7D6F2F53225666FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7622F45A21D36FC600BE5353 /* RTDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7622F45621D36E9C00BE5353 /* RTDefines.h */; };
 		930D97E10527FAC550EBD497145E6217 /* Pods-RichText_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A665BC3A9D6247233864DB52B8459 /* Pods-RichText_Tests-dummy.m */; };
 		A5A0F5D15C398F696DF2486A30DD64E5 /* Pods-RichText_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6586F5D09FB9BBD1215031EEDCCAE78 /* Pods-RichText_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCB1E2978180896015B75939C6750771 /* RichText-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3DC3FC5B547553A4716F4F14F9ED25 /* RichText-dummy.m */; };
@@ -92,6 +93,7 @@
 		5FDEB9F0636A71673617D1A5A5773318 /* Pods-RichText_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RichText_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6908C31135E026D327AD8A02EA4CA0E5 /* Pods_RichText_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichText_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7622F45621D36E9C00BE5353 /* RTDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTDefines.h; sourceTree = "<group>"; };
 		832A665BC3A9D6247233864DB52B8459 /* Pods-RichText_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RichText_Tests-dummy.m"; sourceTree = "<group>"; };
 		8351254DF087324E09C904FFEB29D5CE /* Pods-RichText_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RichText_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		84A9018973981A572C4D9F1560DDC866 /* Pods-RichText_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RichText_Tests.modulemap"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				072A28932014C53200B3434A /* RTProtocols.h */,
+				7622F45621D36E9C00BE5353 /* RTDefines.h */,
 				072A289C2014C53300B3434A /* RTText.h */,
 				072A28982014C53200B3434A /* RTText.m */,
 				072A28922014C53200B3434A /* NSString+RichText.h */,
@@ -301,6 +304,7 @@
 			files = (
 				0703EC71202AA68B0028C35F /* UIFont+RichText.h in Headers */,
 				072A28AA2014C53400B3434A /* NSAttributedString+RichText.h in Headers */,
+				7622F45A21D36FC600BE5353 /* RTDefines.h in Headers */,
 				0703EC6F202AA68B0028C35F /* UIButton+RichText.h in Headers */,
 				072A28A82014C53400B3434A /* NSString+RichText.h in Headers */,
 				0703EC73202AA68B0028C35F /* UILabel+RichText.h in Headers */,
@@ -386,7 +390,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -465,22 +469,32 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -650,23 +664,33 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",

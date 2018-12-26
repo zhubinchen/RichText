@@ -9,6 +9,8 @@
 
 #define AssignProperty(name) self.paragraphStyle.name = self.name
 
+static NSMutableDictionary *stylesPool = nil;
+
 @interface RTStyle()
 @property (nonatomic,strong) NSShadow                            *shadow;
 @property (nonatomic,strong) NSMutableParagraphStyle             *paragraphStyle;
@@ -16,10 +18,23 @@
 
 @implementation RTStyle
 
++ (void)load {
+    [super load];
+    stylesPool = @{}.mutableCopy;
+}
+
 + (instancetype)create:(void (^)(RTStyle *))maker {
     RTStyle *style = [[self alloc] init];
     maker(style);
     return style;
+}
+
++ (instancetype)findStyleByIdentifier:(RTStyleIdentifier *)identifier {
+    return stylesPool[identifier];
+}
+
+- (void)registerWithIdentifier:(RTStyleIdentifier *)identifier {
+    stylesPool[identifier] = self;
 }
 
 - (instancetype)init {

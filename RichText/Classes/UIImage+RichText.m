@@ -8,6 +8,7 @@
 #import "UIImage+RichText.h"
 #import "RTText.h"
 #import "NSAttributedString+RichText.h"
+#import "RTDefines.h"
 
 @implementation UIImage(RichText)
 

@@ -7,12 +7,19 @@
 //
 
 #import "RTAppDelegate.h"
+#import "RTStyle.h"
 
 @implementation RTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    RTStyle *sepecialStyle = [RTStyle create:^(RTStyle *style) {
+        style.color = UIColor.redColor;
+        style.font = [UIFont boldSystemFontOfSize:26];
+        style.underlineColor = UIColor.cyanColor;
+    }];
+    [sepecialStyle registerWithIdentifier:@"myStyle"];
     return YES;
 }
 

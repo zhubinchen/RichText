@@ -14,5 +14,6 @@
 @property(readwrite) id<RTText> richText;
 @property(readwrite) id<RTText> richTextPlaceholder;
 @property(readwrite) RTStyle *style;
+@property(readwrite) IBInspectable NSString *styleId;
 
 @end

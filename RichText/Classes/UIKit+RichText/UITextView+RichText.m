@@ -9,6 +9,7 @@
 #import "NSString+RichText.h"
 #import "NSAttributedString+RichText.h"
 #import <objc/runtime.h>
+#import "RTDefines.h"
 
 @implementation UITextView(RichText)
 
@@ -55,31 +56,21 @@
     }
 }
 
+- (void)setStyleId:(NSString *)styleId {
+    objc_setAssociatedObject(self, "rt_styleId", styleId, OBJC_ASSOCIATION_RETAIN);
+    if (styleId) {
+        self.style = [RTStyle findStyleByIdentifier:self.styleId];
+    }
+}
+
+- (NSString *)styleId {
+    return objc_getAssociatedObject(self, "rt_styleId");
+}
+
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        SEL originalSelector = @selector(setText:);
-        SEL swizzledSelector = @selector(rt_setText:);
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        BOOL didAddMethod =
-        class_addMethod(class,
-                        originalSelector,
-                        method_getImplementation(swizzledMethod),
-                        method_getTypeEncoding(swizzledMethod));
-        
-        if (didAddMethod) {
-            class_replaceMethod(class,
-                                swizzledSelector,
-                                method_getImplementation(originalMethod),
-                                method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
+        _rt_swizzle(setText:, rt_setText:);
     });
 }
 

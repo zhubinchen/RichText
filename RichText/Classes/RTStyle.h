@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NSString RTStyleIdentifier;
+
 @interface RTStyle : NSObject
 
 @property (nonatomic,strong) UIColor             *color;
@@ -33,6 +35,10 @@
 @property (nonatomic,assign) CGFloat lineHeightMultiple;
 @property (nonatomic,assign) CGFloat paragraphSpacingBefore;
 @property (nonatomic,assign) CGFloat hyphenationFactor;
+
++ (instancetype)findStyleByIdentifier:(RTStyleIdentifier*)identifier;
+
+- (void)registerWithIdentifier:(RTStyleIdentifier*)identifier;
 
 + (instancetype)create:(void(^)(RTStyle *style))maker;
 

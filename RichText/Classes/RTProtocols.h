@@ -42,39 +42,4 @@
 @property (readonly) RTText*(^whole)(); // 全部范围
 @end
 
-
-#define _rt_imp - (RTText *)_rt { \
-    return [[RTText alloc] initWithText:self]; \
-}
-
-#define _rt_imp0(func) - (RTText *(^)())func { \
-return ^() { \
-return self._rt.func();\
-};\
-}
-
-#define _rt_imp1(func) - (RTText *(^)(id))func { \
-return ^(id prama) { \
-return self._rt.func(prama);\
-};\
-}
-
-#define _rt_imp1_f(func) - (RTText *(^)(CGFloat))func { \
-return ^(CGFloat prama) { \
-return self._rt.func(prama);\
-};\
-}
-
-#define _rt_imp1_i(func) - (RTText *(^)(NSInteger))func { \
-return ^(NSInteger prama) { \
-return self._rt.func(prama);\
-};\
-}
-
-#define _rt_imp2(func) - (RTText *(^)(NSInteger,NSInteger))func { \
-return ^(NSInteger prama1,NSInteger prama2) { \
-return self._rt.func(prama1,prama2);\
-};\
-}
-
 #endif /* RTProtocols_h */

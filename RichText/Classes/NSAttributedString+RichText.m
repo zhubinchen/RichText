@@ -7,6 +7,7 @@
 
 #import "NSAttributedString+RichText.h"
 #import "RTText.h"
+#import "RTDefines.h"
 
 @implementation NSAttributedString(ZHRichText)
 
