@@ -22,17 +22,31 @@ RichText使用方法链来即可流畅地创建完一个富文本。添加属性
 使用NSAttributedString
 
 ```objectivec
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithString:@"恭喜你获得50金币，以及10元现金奖励，可提现"];
-    [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, attrStr.length)];
+    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc]
+                                           initWithString:@"恭喜你获得50金币，以及10元现金奖励，可提现"];
+    [attrStr addAttribute:NSFontAttributeName
+                    value:[UIFont systemFontOfSize:14]
+                    range:NSMakeRange(0, attrStr.length)];
     NSError *err = nil;
-    NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"\\d" options:NSRegularExpressionCaseInsensitive error:&err];
+    NSRegularExpression *regExp = [NSRegularExpression
+                                   regularExpressionWithPattern:@"\\d"
+                                   options:NSRegularExpressionCaseInsensitive
+                                   error:&err];
     NSAssert(err == nil, err.localizedDescription);
-    [regExp enumerateMatchesInString:attrStr.string options:NSMatchingReportCompletion range:NSMakeRange(0, attrStr.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+    [regExp enumerateMatchesInString:attrStr.string
+                             options:NSMatchingReportCompletion
+                               range:NSMakeRange(0, attrStr.length)
+                          usingBlock:^(NSTextCheckingResult * _Nullable result,
+                                       NSMatchingFlags flags, BOOL * _Nonnull stop) {
         if (result.range.location != NSNotFound) {
-            [attrStr addAttribute:NSForegroundColorAttributeName value:UIColor.redColor range:result.range];
+            [attrStr addAttribute:NSForegroundColorAttributeName
+                            value:UIColor.redColor
+                            range:result.range];
         }
     }];
-    [attrStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:14] range:NSMakeRange(attrStr.length - 3, 3)];
+    [attrStr addAttribute:NSFontAttributeName
+                    value:[UIFont boldSystemFontOfSize:14]
+                    range:NSMakeRange(attrStr.length - 3, 3)];
     
 ```
 
