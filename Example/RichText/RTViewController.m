@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UILabel *label3;
+@property (weak, nonatomic) IBOutlet UILabel *label4;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
@@ -31,13 +32,10 @@
     
     self.title = @"RichText Samples";
     
-    style1 = [RTStyle create:^(RTStyle *style) {
-        style.font = [UIFont boldSystemFontOfSize:18];
-        style.color = [UIColor darkGrayColor];
-    }];
+    style1 = [RTStyle findStyleByIdentifier:@"myStyle"];
     
     style2 = [RTStyle create:^(RTStyle *style) {
-        style.font = [UIFont systemFontOfSize:16];
+        style.font = [UIFont boldSystemFontOfSize:18];
         style.color = UIColor.blueColor;
         style.underlineColor = UIColor.blueColor;
         style.lineSpacing = 20;
@@ -49,6 +47,7 @@
     [self setupLabel1];
     [self setupLabel2];
     [self setupLabel3];
+    self.label4.text = @"Styled with 'style id' in storyboard";
     [self setupButton];
     [self setupTextView];
 }
@@ -80,8 +79,8 @@
 }
 
 - (void)setupLabel3 {
-//    RTText *html = [[RTText alloc] initWithHTML:@"<h1>Init with HTML</h1> <p style=\"font-family:verdana;color:red\"> This text is in Verdana and red</p><p style=\"font-family:times;color:green\">This text is in Times and green</p>"];
-//    self.label3.richText = html;
+    RTText *html = [[RTText alloc] initWithHTML:@"<h1>Init with HTML</h1> <p style=\"font-family:verdana;color:red\"> This text is in Verdana and red</p><p style=\"font-family:times;color:green\">This text is in Times and green</p>"];
+    self.label3.richText = html;
 }
 
 - (void)setupButton {

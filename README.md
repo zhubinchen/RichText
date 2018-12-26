@@ -7,7 +7,7 @@
 
 
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1ft1bue3ty6j30ku112jud.jpg)
+![](screenshot.png)
 
 `RichText` 是基于`NSAttributedString`的一层轻量级的封装，可以用它来代替`NSAttributedString`/`NSMutableAttributedString `，实现各种富文本。
 
@@ -15,7 +15,7 @@
 
 RichText使用方法链来即可流畅地创建完一个富文本。添加属性，改变范围，匹配正则，拼接字符串，都仅仅是调用一个简短的方法。
 
-举个🌰，对比一下：
+举个例子，对比一下：
 > 创建一个简单的富文本，数字变红，最后3个字加粗
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1ft1b0lg4jaj30jj02a74h.jpg)
 
@@ -41,11 +41,30 @@ RichText使用方法链来即可流畅地创建完一个富文本。添加属性
 ```objectivec
 @"恭喜你获得50金币，以及10元现金奖励，可提现"
     .setFont(UIFont.regular(14))
-    .matches(@"\\d")
-    .setColor(UIColor.redColor)
-    .last(3)
+    .matches(@"\\d")//选中数字
+    .setColor(UIColor.redColor)//设置颜色
+    .last(3)//选中最后3个
     .setFont(UIFont.bold(14));
 ```
+
+## How to use
+RichText操作流程跟我们平时使用文本处理软件是类似的，主要是一下两步：
+
+1. 选中要处理那部分文本（**默认选中全部文本**，对应的操作是`RTRangeable`协议里的方法）
+2. 对选中的部分处理，比如着色，加粗，加阴影（对应的操作是`RTStyleable`协议里的方法）
+
+```objectivec
+@"RichText"
+    .setColor(UIColor.magentaColor) //设置颜色
+    .setStrokeColor(UIColor.blueColor) // 设置描边颜色
+    .setStrokeWidth(-3) // 设置描边宽度
+    .setShadow(shadow) // 设置阴影
+    .rangeTo(4) // 选中范围
+    .setColor(UIColor.orangeColor) // 给前4个设置颜色
+    .matches(@"R") // 匹配指定范围
+    .setExpansion(0.5) // 拉伸或压缩
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
