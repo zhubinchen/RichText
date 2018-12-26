@@ -20,7 +20,7 @@ typedef id<RTText>(^RTParser)(NSString* string);
 
 - (instancetype)initWithText:(id<RTText>)text;
 
-// HTML 转成RTText，效率较低，复杂的HTML可能耗时很长
+// HTML 转成RTText，可能耗时很长
 - (instancetype)initWithHTML:(NSString*)htmlStr;
 
 - (RTText *)subtextToIndex:(NSUInteger)to;

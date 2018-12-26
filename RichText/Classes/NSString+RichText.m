@@ -21,7 +21,8 @@ _rt_imp1(matches)
 _rt_imp2(range)
 _rt_imp1_i(rangeTo)
 _rt_imp1_i(rangeFrom)
-
+_rt_imp1_i(first)
+_rt_imp1_i(last)
 #pragma mark Styleable
 
 _rt_imp1(setColor)
