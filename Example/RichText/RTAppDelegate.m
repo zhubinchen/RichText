@@ -15,8 +15,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    registerStyle(@"", ^(RTStyle *style) {
-        
+    registerStyle(@"myStyle", ^(RTStyle *style) {
+        style.backgroundColor = UIColor.lightGrayColor;
+        style.font = [UIFont systemFontOfSize:16];
+        style.color = UIColor.orangeColor;
+        style.shadowColor = UIColor.purpleColor;
+        style.shadowOffset = CGSizeMake(0, 2);
     });
     
     return YES;

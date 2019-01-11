@@ -50,6 +50,7 @@ typedef void(^RTStyleBlock)(RTStyle *style);
 
 @end
 
+
 static void registerStyle(RTStyleIdentifier *identifier,RTStyleBlock block) {
     RTStyle *style = [RTStyle create:block];
     [style registerWithIdentifier:identifier];

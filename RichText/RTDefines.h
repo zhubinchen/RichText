@@ -15,7 +15,7 @@
 return [[RTText alloc] initWithText:self]; \
 }
 
-#define _rt_imp0(func) - (RTText *(^)())func { \
+#define _rt_imp0(func) - (RTText *(^)(void))func { \
 return ^() { \
 return self._rt.func();\
 };\
