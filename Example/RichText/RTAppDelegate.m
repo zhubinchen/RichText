@@ -13,12 +13,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    RTStyle *sepecialStyle = [RTStyle create:^(RTStyle *style) {
-        style.font = [UIFont boldSystemFontOfSize:18];
-        style.color = [UIColor darkGrayColor];
-    }];
-    [sepecialStyle registerWithIdentifier:@"myStyle"];
+    register_style(@"myStyle", ^(RTStyle *style) {
+        style.font = [UIFont systemFontOfSize:16];
+        style.color = UIColor.grayColor;
+        style.shadowColor = UIColor.purpleColor;
+        style.shadowOffset = CGSizeMake(0, 1.5);
+        style.obliqueness = 0.6;
+    });
+    
     return YES;
 }
 

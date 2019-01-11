@@ -25,8 +25,8 @@
 }
 
 - (void)setStyle:(RTStyle *)style forState:(UIControlState)state {
-    
-    objc_setAssociatedObject(self, "rt_style" + state, style, OBJC_ASSOCIATION_RETAIN);
+    void *key = "rt_style";
+    objc_setAssociatedObject(self, key + state, style, OBJC_ASSOCIATION_RETAIN);
     NSString *title = [self titleForState:state];
     if (title && style) {
         [self setRichText:title.setStyle(style) forState:state];
@@ -34,7 +34,8 @@
 }
 
 - (RTStyle *)styleForState:(UIControlState)state {
-    return objc_getAssociatedObject(self, "rt_style" + state);
+    void *key = "rt_style";
+    return objc_getAssociatedObject(self, key + state);
 }
 
 - (void)rt_setTitle:(NSString *)title forState:(UIControlState)state {

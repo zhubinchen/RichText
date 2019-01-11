@@ -7,7 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class RTStyle;
+
 typedef NSString RTStyleIdentifier;
+
+typedef void(^RTStyleBlock)(RTStyle *style);
 
 @interface RTStyle : NSObject
 
@@ -36,12 +40,21 @@ typedef NSString RTStyleIdentifier;
 @property (nonatomic,assign) CGFloat paragraphSpacingBefore;
 @property (nonatomic,assign) CGFloat hyphenationFactor;
 
+@property (readonly) NSDictionary      *attributes;
+
 + (instancetype)findStyleByIdentifier:(RTStyleIdentifier*)identifier;
 
 - (void)registerWithIdentifier:(RTStyleIdentifier*)identifier;
 
-+ (instancetype)create:(void(^)(RTStyle *style))maker;
-
-@property (readonly) NSDictionary      *attributes;
++ (instancetype)create:(RTStyleBlock)maker;
 
 @end
+
+ __attribute__((unused)) static void register_style(RTStyleIdentifier *identifier,RTStyleBlock block) {
+    RTStyle *style = [RTStyle create:block];
+    [style registerWithIdentifier:identifier];
+};
+
+__attribute__((unused)) static RTStyle* find_style(RTStyleIdentifier *identifier) {
+    return [RTStyle findStyleByIdentifier:identifier];
+}

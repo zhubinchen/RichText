@@ -11,13 +11,10 @@
 @interface RTText ()
 
 @property (nonatomic,strong) NSArray<NSValue*>* ranges;
-
+@property (nonatomic,strong) NSMutableAttributedString *attributedString;
 @end
 
 @implementation RTText
-{
-    NSMutableAttributedString *_attributedString;
-}
 
 - (instancetype)init {
     return [self initWithText:nil];
@@ -111,7 +108,7 @@
     };
 }
 
-- (RTText *(^)())whole {
+- (RTText *(^)(void))whole {
     return ^() {
         return self.range(0,self.length);
     };
@@ -120,7 +117,7 @@
 - (RTText *(^)(NSString *))matches {
     return ^(NSString *expStr) {
         NSMutableArray *ranges = @[].mutableCopy;
-        [_attributedString.string matches:expStr usingBlock:^(NSRange range) {
+        [self->_attributedString.string matches:expStr usingBlock:^(NSRange range) {
             [ranges addObject:[NSValue valueWithRange:range]];
         }];
         self.ranges = ranges;
@@ -218,6 +215,7 @@
 
 - (RTText *)subtextToIndex:(NSUInteger)to {
     NSRange range = NSMakeRange(0, to);
+    
     return [self subtextWithRange:range];
 }
 

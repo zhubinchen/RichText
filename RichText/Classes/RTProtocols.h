@@ -39,7 +39,7 @@
 @property (readonly) RTText*(^last)(NSInteger count); // last(2) 后两个
 
 @property (readonly) RTText*(^matches)(NSString *pattern); // 匹配正则的范围
-@property (readonly) RTText*(^whole)(); // 全部范围
+@property (readonly) RTText*(^whole)(void); // 全部范围
 @end
 
 #endif /* RTProtocols_h */

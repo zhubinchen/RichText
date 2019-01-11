@@ -24,6 +24,7 @@
 {
     RTStyle *style1;
     RTStyle *style2;
+    RTStyle *style3;
 }
 
 - (void)viewDidLoad
@@ -32,12 +33,18 @@
     
     self.title = @"RichText Samples";
     
-    style1 = [RTStyle findStyleByIdentifier:@"myStyle"];
+    style1 = find_style(@"myStyle");
     
     style2 = [RTStyle create:^(RTStyle *style) {
-        style.font = [UIFont boldSystemFontOfSize:18];
+        style.font = [UIFont boldSystemFontOfSize:16];
         style.color = UIColor.blueColor;
         style.underlineColor = UIColor.blueColor;
+    }];
+    
+    style3 = [RTStyle create:^(RTStyle *style) {
+        style.font = [UIFont boldSystemFontOfSize:16];
+        style.color = UIColor.lightGrayColor;
+        style.underlineColor = UIColor.lightGrayColor;
         style.lineSpacing = 20;
         style.hyphenationFactor = 1;
         style.firstLineHeadIndent = 20;
@@ -47,7 +54,7 @@
     [self setupLabel1];
     [self setupLabel2];
     [self setupLabel3];
-    self.label4.text = @"Styled with 'style id' in storyboard";
+
     [self setupButton];
     [self setupTextView];
 }
@@ -85,14 +92,14 @@
 
 - (void)setupButton {
     // 设置style后，每次setTitle都会应用对应的style
-    [self.button setStyle:style1 forState:UIControlStateNormal];
-    [self.button setStyle:style2 forState:UIControlStateHighlighted];
+    [self.button setStyle:style2 forState:UIControlStateNormal];
+    [self.button setStyle:style1 forState:UIControlStateHighlighted];
     [self.button setTitle:@"Style for UIControlStateNormal" forState:UIControlStateNormal];
     [self.button setTitle:@"Style for UIControlStateHighlighted" forState:UIControlStateHighlighted];
 }
 
 - (void)setupTextView {
-    self.textView.style = style2;
+    self.textView.style = style3;
     self.textView.text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
 }
 

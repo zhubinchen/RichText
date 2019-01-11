@@ -39,6 +39,7 @@ static NSMutableDictionary *stylesPool = nil;
 
 - (instancetype)init {
     if (self = [super init]) {
+        
         self.paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     }
     return self;
