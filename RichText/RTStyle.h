@@ -50,8 +50,11 @@ typedef void(^RTStyleBlock)(RTStyle *style);
 
 @end
 
-
-static void registerStyle(RTStyleIdentifier *identifier,RTStyleBlock block) {
+ __attribute__((unused)) static void register_style(RTStyleIdentifier *identifier,RTStyleBlock block) {
     RTStyle *style = [RTStyle create:block];
     [style registerWithIdentifier:identifier];
 };
+
+__attribute__((unused)) static RTStyle* find_style(RTStyleIdentifier *identifier) {
+    return [RTStyle findStyleByIdentifier:identifier];
+}

@@ -33,7 +33,7 @@
     
     self.title = @"RichText Samples";
     
-    style1 = [RTStyle findStyleByIdentifier:@"myStyle"];
+    style1 = find_style(@"myStyle");
     
     style2 = [RTStyle create:^(RTStyle *style) {
         style.font = [UIFont boldSystemFontOfSize:16];
@@ -54,7 +54,7 @@
     [self setupLabel1];
     [self setupLabel2];
     [self setupLabel3];
-    self.label4.text = @"Styled with 'style id' in storyboard";
+
     [self setupButton];
     [self setupTextView];
 }
@@ -92,8 +92,8 @@
 
 - (void)setupButton {
     // 设置style后，每次setTitle都会应用对应的style
-    [self.button setStyle:style1 forState:UIControlStateNormal];
-    [self.button setStyle:style2 forState:UIControlStateHighlighted];
+    [self.button setStyle:style2 forState:UIControlStateNormal];
+    [self.button setStyle:style1 forState:UIControlStateHighlighted];
     [self.button setTitle:@"Style for UIControlStateNormal" forState:UIControlStateNormal];
     [self.button setTitle:@"Style for UIControlStateHighlighted" forState:UIControlStateHighlighted];
 }

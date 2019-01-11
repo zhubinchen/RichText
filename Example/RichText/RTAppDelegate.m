@@ -9,18 +9,16 @@
 #import "RTAppDelegate.h"
 #import "RTStyle.h"
 
-
-
 @implementation RTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    registerStyle(@"myStyle", ^(RTStyle *style) {
-        style.backgroundColor = UIColor.lightGrayColor;
+    register_style(@"myStyle", ^(RTStyle *style) {
         style.font = [UIFont systemFontOfSize:16];
-        style.color = UIColor.orangeColor;
+        style.color = UIColor.grayColor;
         style.shadowColor = UIColor.purpleColor;
-        style.shadowOffset = CGSizeMake(0, 2);
+        style.shadowOffset = CGSizeMake(0, 1.5);
+        style.obliqueness = 0.6;
     });
     
     return YES;
