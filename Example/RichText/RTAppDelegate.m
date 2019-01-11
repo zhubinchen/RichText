@@ -9,16 +9,16 @@
 #import "RTAppDelegate.h"
 #import "RTStyle.h"
 
+
+
 @implementation RTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    RTStyle *sepecialStyle = [RTStyle create:^(RTStyle *style) {
-        style.font = [UIFont boldSystemFontOfSize:18];
-        style.color = [UIColor darkGrayColor];
-    }];
-    [sepecialStyle registerWithIdentifier:@"myStyle"];
+    registerStyle(@"", ^(RTStyle *style) {
+        
+    });
+    
     return YES;
 }
 

@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'RichText_Example' do
   pod 'RichText', :path => '../'
-
-  target 'RichText_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
