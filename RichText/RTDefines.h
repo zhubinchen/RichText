@@ -11,6 +11,8 @@
 #ifndef RTDefines_h
 #define RTDefines_h
 
+
+
 #define _rt_imp - (RTText *)_rt { \
 return [[RTText alloc] initWithText:self]; \
 }

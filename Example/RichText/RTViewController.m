@@ -9,6 +9,8 @@
 #import "RTViewController.h"
 #import <RichText/RichText.h>
 
+#define NormalStyle find_style(@"normal")
+
 @interface RTViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
@@ -82,7 +84,7 @@
 
 - (void)setupLabel2 {
     UIImage *image = [UIImage imageNamed:@"smile"].withSize(80,80);
-    self.label2.richText = @"Join text to".join(image).join(@"image!").setStyle(style2);
+    self.label2.richText = @"Join text to".join(image).join(@"image!").setStyle(NormalStyle);
 }
 
 - (void)setupLabel3 {
