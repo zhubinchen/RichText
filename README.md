@@ -9,14 +9,11 @@
 
 ![](screenshot.png)
 
-使用`NSAttributedString`来创建一个富文本是一件很繁琐闹心的事，各种又长又难记的属性字典，不仅写起来费时，代码的可读性也不是很好。`RichText` 是基于`NSAttributedString`的一层轻量级的封装，可以用它来代替`NSAttributedString`/`NSMutableAttributedString `，实现各种富文本。
+`RichText` is a light weight wrapper of `NSAttributedString`, instead of attributes dictionary, RichText using block chains. RichText provides lots of block to style, append, match text.
 
-`RichText`主要是使用方法链来流畅地创建完一个富文本。添加属性，改变范围，匹配正则，拼接字符串，都仅仅是调用一个简短的方法。
-
-举个例子，创建一个简单的富文本，数字变红，最后3个字加粗，对比一下，下面是效果图：
+Let's create a simple richtext like the follow, numders set to red color, the last 3 characters set to bold font：
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1ft1b0lg4jaj30jj02a74h.jpg)
-
-使用NSAttributedString
+#### Traditional way
 
 ```objectivec
     NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc]
@@ -47,7 +44,7 @@
     
 ```
 
-使用RichText
+#### Smart way
 
 ```objectivec
 @"恭喜你获得50金币，以及10元现金奖励，可提现"
@@ -60,17 +57,16 @@
 
 ## How to use
 
-RichText 包含了以下3个协议
+There are three import protocols in RTText, in these protocols's  cooperation, handing our richtext become easy.
 
-* RTText（主要负责适配不同类型）
-* RTRangeable（改变选中范围）
-* RTStyleable（对选中的部分进行处理，比如着色，加粗，加阴影）
+* RTText protocol（an adapter between RTText and other type）
+* RTRangeable protocol（change the range the follow-up operation will take effect）
+* RTStyleable protocol（style the text，such as color, font, shadow ...）
 
+Create a richtext with 2 steps:
 
-RichText操作流程跟我们平时使用文本处理软件是类似的，主要是一下两步：
-
-1. 选中要处理那部分文本（**默认选中全部文本**，对应的操作是`RTRangeable`协议里的方法）
-2. 对选中的部分处理，比如着色，加粗，加阴影（对应的操作是`RTStyleable`协议里的方法）
+1. Select a range you'd like to be handed with the methods in `RTRangeable`
+2. Add styles to the range with the methods in `RTStyleable`
 
 ```objectivec
 @"RichText"
@@ -84,7 +80,7 @@ RichText操作流程跟我们平时使用文本处理软件是类似的，主要
     .setExpansion(0.5) // 拉伸或压缩
 ```
 
-NSAttributedString 和 NSString 实现了以上3个协议的，你完全可以把它们当RTText类型用。RTText对象也可以通过attributedString属性转成NSAttributedString类型，以下两种方式是等价的：
+NSAttributedString, NSString and RTText implemented all of above protocols, they can convert to each other at most time. two ways at bellow is equality:
 
 ```objectivec
     self.label.attributedText = @"RichText"
@@ -99,7 +95,7 @@ NSAttributedString 和 NSString 实现了以上3个协议的，你完全可以�
     .setColor(UIColor.magentaColor);
 ```
 
-UIImage 也实现了RTText协议，所以你可以很方便地插入UIImage到富文本中：
+UIImage implements RTText protocol also, you can insert a image to richtext conveniently, but you can not style a image. 
 
 ```
     UIImage *image = [UIImage imageNamed:@"smile"].withSize(80,80);
@@ -123,7 +119,7 @@ pod 'RichText'
 
 ## Author
 
-cheng4741@qq.com
+bingcheng.zhu@qq.com
 
 ## License
 
